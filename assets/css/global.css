@@ -1,0 +1,417 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - GLOBAL REUSABLE SYSTEM & UTILITY CLASSES
+ * Zero-redundancy architecture for headings, typography, buttons & spacing
+ * ==============================================================================
+ */
+
+/* --------------------------------------------------------------------------
+   1. Modern CSS Reset & Base Defaults
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--color-text-white);
+  background-color: var(--color-bg-dark);
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   GSAP ScrollSmoother Structure
+   -------------------------------------------------------------------------- */
+#smooth-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#smooth-content {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   2. Layout & Container Utilities
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.gap-1 {
+  gap: var(--space-1);
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+/* --------------------------------------------------------------------------
+   3. Global Typography Classes
+   -------------------------------------------------------------------------- */
+.h1,
+.heading-hero {
+  font-size: var(--text-hero);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--color-text-white);
+}
+
+.h2,
+.heading-section {
+  font-size: var(--text-3xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  color: var(--color-text-white);
+}
+
+.h3,
+.heading-card {
+  font-size: var(--text-2xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+}
+
+.h4,
+.heading-sub {
+  font-size: var(--text-xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-normal);
+}
+
+.eyebrow,
+.text-eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  line-height: var(--lh-normal);
+}
+
+.text-lead {
+  font-size: var(--text-lead);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+}
+
+.text-body {
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+}
+
+.text-small {
+  font-size: var(--text-sm);
+  line-height: var(--lh-normal);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--lh-normal);
+}
+
+/* Color Modifiers */
+.text-white {
+  color: var(--color-text-white);
+}
+
+.text-gold {
+  color: var(--color-accent-gold);
+}
+
+.text-dark {
+  color: var(--color-text-dark);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-dim {
+  color: var(--color-text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   4. Global Button System (Strict 60fps Micro-interactions)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 28px;
+  min-height: 52px;
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: transform var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  will-change: transform;
+}
+
+/* Primary Gold Button */
+.btn-primary {
+  background-color: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
+  color: var(--color-text-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-gold-hover);
+  border-color: var(--color-accent-gold-hover);
+  color: var(--color-text-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-primary:active {
+  background-color: var(--color-accent-gold-active);
+  transform: translateY(0);
+}
+
+/* Outline Gold Button */
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-accent-gold);
+  color: var(--color-accent-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-text-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-outline:active {
+  background-color: var(--color-accent-gold-active);
+  transform: translateY(0);
+}
+
+/* Dark Navy Header/Accent Button */
+.btn-dark {
+  background-color: var(--color-header-btn-bg);
+  border-color: var(--color-header-btn-bg);
+  color: var(--color-text-white);
+  padding: 14px 24px;
+}
+
+.btn-dark:hover {
+  background-color: var(--color-header-btn-hover);
+  border-color: var(--color-header-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 15, 28, 0.3);
+}
+
+.btn-dark:active {
+  transform: translateY(0);
+}
+
+/* Button Group Container */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   5. Global Callout Card Component
+   -------------------------------------------------------------------------- */
+.callout-card {
+  position: relative;
+  border-left: var(--border-gold-accent);
+  padding-left: var(--space-4);
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   6. Global Spacing Utilities
+   -------------------------------------------------------------------------- */
+.mb-1 {
+  margin-bottom: var(--space-1);
+}
+
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-3 {
+  margin-bottom: var(--space-3);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-5 {
+  margin-bottom: var(--space-5);
+}
+
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.mb-10 {
+  margin-bottom: var(--space-10);
+}
+
+.mt-1 {
+  margin-top: var(--space-1);
+}
+
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mt-3 {
+  margin-top: var(--space-3);
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mt-6 {
+  margin-top: var(--space-6);
+}
+
+.mt-8 {
+  margin-top: var(--space-8);
+}
+
+.mt-10 {
+  margin-top: var(--space-10);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Lock & Touch Optimization
+   -------------------------------------------------------------------------- */
+body.nav-locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+    --container-padding: 20px;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+}

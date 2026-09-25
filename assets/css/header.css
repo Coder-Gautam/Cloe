@@ -1,0 +1,217 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - HEADER NAVIGATION COMPONENT
+ * Clean, lightweight, 100% accessible navigation matching Figma specs
+ * ==============================================================================
+ */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-header-bg);
+  z-index: 100;
+  border-bottom: none;
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1440px;
+  padding-left: clamp(1.5rem, 4vw, 3.75rem);
+  padding-right: clamp(1.5rem, 4vw, 3.75rem);
+}
+
+/* Brand Logo (Enlarged to match Figma) */
+.site-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-logo-img {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+/* Navigation Links */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3.25rem);
+}
+
+.site-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: var(--fw-medium);
+  color: var(--color-header-nav);
+  position: relative;
+  padding: 8px 0;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--color-accent-gold);
+}
+
+.nav-link.active {
+  font-weight: var(--fw-bold);
+  color: var(--color-primary-navy);
+}
+
+/* Accent link in nav: Réserver le livre */
+.nav-link-accent {
+  color: var(--color-accent-gold) !important;
+  font-weight: var(--fw-semibold);
+}
+
+.nav-link-accent:hover {
+  color: var(--color-accent-gold-hover) !important;
+}
+
+/* Header Action Button */
+.header-action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-action .btn {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.01em;
+  border-radius: 0;
+  background-color: var(--color-primary-navy);
+  color: var(--color-white);
+}
+
+.header-action .btn:hover {
+  background-color: #1c2e54;
+  transform: translateY(-1px);
+}
+
+/* Mobile Hamburger Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 105;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-header-nav);
+  transition: var(--transition-fast);
+}
+
+/* Responsive Navigation */
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .site-header {
+    height: 72px;
+  }
+
+  .site-logo-img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--color-header-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 88px 28px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    transition: right var(--transition-smooth);
+    z-index: 102;
+    overflow-y: auto;
+  }
+
+  .site-nav.is-open {
+    right: 0;
+  }
+
+  .site-nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: var(--space-4);
+  }
+
+  .nav-link {
+    font-size: var(--text-base);
+  }
+
+  .header-action {
+    margin-top: var(--space-6);
+    width: 100%;
+  }
+
+  .header-action .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hamburger active transform */
+  .menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+/* Nav Backdrop */
+.site-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 33, 61, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+}
+
+.site-nav-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}

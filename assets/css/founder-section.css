@@ -1,0 +1,197 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - FOUNDER SECTION (ABOUT CLOÉ CARON)
+ * Editorial 2-column layout with quote, bio, credentials table, and portrait
+ * ==============================================================================
+ */
+
+.founder-section {
+  width: 100%;
+  background-color: var(--color-bg-offwhite);
+  padding: clamp(70px, 8vw, 120px) 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* 2-Column Responsive Grid */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(40px, 5vw, 84px);
+  align-items: stretch;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Content, Quote, Bio & Credentials
+   -------------------------------------------------------------------------- */
+.founder-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Eyebrow */
+.founder-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-slate-gray);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.founder-section-eyebrow .eyebrow-dash {
+  color: var(--color-accent-gold);
+}
+
+/* Main Name Title */
+.founder-section-name {
+  color: var(--color-primary-navy);
+  font-size: clamp(2.5rem, 2.2rem + 1.8vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: var(--ls-tight);
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+}
+
+/* Testimonial Quote */
+.founder-quote {
+  margin: 0 0 clamp(28px, 3.5vw, 42px) 0;
+  padding: 0;
+  border: none;
+}
+
+.founder-quote-text {
+  color: var(--color-primary-navy);
+  font-size: clamp(1.4rem, 1.25rem + 0.8vw, 1.95rem);
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+}
+
+.founder-quote-author {
+  display: block;
+  color: var(--color-slate-gray);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* Bio Description Paragraph */
+.founder-bio-text {
+  color: var(--color-text-dark);
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin-bottom: clamp(36px, 4vw, 52px);
+  max-width: 620px;
+}
+
+/* --------------------------------------------------------------------------
+   Credentials & Facts Table
+   -------------------------------------------------------------------------- */
+.founder-credentials-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.credential-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: baseline;
+  gap: 20px;
+  padding: clamp(14px, 1.6vh, 18px) 0;
+  border-top: 1px solid rgba(20, 33, 61, 0.1);
+}
+
+.credential-row:last-child {
+  border-bottom: 1px solid rgba(20, 33, 61, 0.1);
+}
+
+.credential-label {
+  color: var(--color-slate-gray);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.credential-value {
+  color: var(--color-primary-navy);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Portrait Photo
+   -------------------------------------------------------------------------- */
+.founder-photo-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.founder-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(20, 33, 61, 0.08);
+}
+
+.founder-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.founder-photo-wrap:hover .founder-photo-img {
+  transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .founder-photo-col {
+    order: -1;
+    /* Display photo at top on tablet/mobile */
+  }
+
+  .founder-photo-wrap {
+    min-height: 440px;
+    max-height: 520px;
+  }
+
+  .credential-row {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .credential-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 0;
+  }
+
+  .founder-photo-wrap {
+    min-height: 360px;
+  }
+}

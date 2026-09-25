@@ -1,0 +1,96 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - FINAL HOME CTA SECTION (COMMENCER)
+ * Deep navy impact banner with centered headline, lead text & dual action CTAs
+ * ==============================================================================
+ */
+
+.home-cta-section {
+  width: 100%;
+  background-color: var(--color-primary-navy);
+  padding: clamp(80px, 9vw, 90px) 0;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.home-cta-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.home-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+  margin-bottom: clamp(18px, 2.2vw, 26px);
+}
+
+.home-cta-eyebrow .eyebrow-dash {
+  color: var(--color-accent-gold);
+  font-weight: 700;
+}
+
+.home-cta-title {
+  color: var(--color-white);
+  font-size: clamp(2.25rem, 1.8rem + 1.8vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: var(--ls-tight);
+  margin: 0 0 clamp(18px, 2.2vw, 24px) 0;
+}
+
+.home-cta-lead {
+  color: var(--color-white);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  line-height: 1.62;
+  font-weight: 400;
+  max-width: 780px;
+  margin: 0 auto clamp(36px, 4vw, 48px);
+}
+
+.home-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home-cta-actions .btn {
+  padding: 16px 36px;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 0 !important;
+  /* Strictly ZERO border-radius */
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .home-cta-actions {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .home-cta-actions .btn {
+    width: 100%;
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-cta-section {
+    padding: 64px 0;
+  }
+
+  .home-cta-title {
+    font-size: clamp(1.8rem, 1.5rem + 1.5vw, 2.35rem);
+  }
+}

@@ -1,0 +1,104 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - DESIGN TOKENS & SYSTEM VARIABLES
+ * STRICT FIGMA COLOR PALETTE:
+ * 1. #14213D - Primary Dark Navy
+ * 2. #C8A24B - Brand Gold Accent
+ * 3. #FFFFFF - Pure White
+ * 4. #FAF8F5 - Warm Off-White (Section / Header Background)
+ * 5. #7C879C - Slate Gray (Muted / Body Text)
+ * 6. #CFDAF1 - Ice Blue (Hero Lead / Subtext)
+ * ==============================================================================
+ */
+
+:root {
+  /* --- Strict 6-Color Figma Palette Tokens --- */
+  --color-primary-navy: #14213D;
+  --color-accent-gold: #C8A24B;
+  --color-accent-gold-hover: #D4B15C;
+  --color-accent-gold-active: #B6913D;
+  --color-white: #FFFFFF;
+  --color-bg-offwhite: #FAF8F5;
+  --color-slate-gray: #7C879C;
+  --color-ice-blue: #CFDAF1;
+
+  /* Semantic Color Aliases */
+  --color-bg-dark: var(--color-primary-navy);
+  --color-header-bg: var(--color-bg-offwhite);
+  --color-header-nav: var(--color-primary-navy);
+  --color-header-btn-bg: var(--color-primary-navy);
+  --color-header-btn-hover: #1b2c52;
+
+  --color-text-white: var(--color-white);
+  --color-text-dark: var(--color-primary-navy);
+  --color-text-lead: var(--color-ice-blue);
+  --color-text-muted: var(--color-slate-gray);
+  --color-text-dim: var(--color-slate-gray);
+  --color-text-body-dark: var(--color-slate-gray);
+
+  /* --- Typography Tokens --- */
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Fluid Typography Clamps */
+  --text-xs: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);       /* 11px - 12px */
+  --text-sm: clamp(0.8125rem, 0.78rem + 0.18vw, 0.875rem);     /* 13px - 14px */
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);         /* 15px - 16px */
+  --text-md: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);           /* 16px - 18px */
+  --text-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);       /* 17px - 20px */
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);          /* 20px - 24px */
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.8vw, 2rem);           /* 24px - 32px */
+  --text-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);            /* 32px - 44px */
+  --text-hero: clamp(2.5rem, 2rem + 2.8vw, 3.875rem);          /* 40px - 62px Hero Title */
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Line Heights */
+  --lh-tight: 1.12;
+  --lh-snug: 1.28;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  /* Letter Spacings */
+  --ls-tight: -0.02em;
+  --ls-normal: 0em;
+  --ls-wide: 0.04em;
+  --ls-eyebrow: 0.12em;
+
+  /* --- Spacing & Sizing Tokens --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* --- Container & Layout --- */
+  --container-max-width: 1440px;
+  --container-padding: clamp(1.25rem, 4vw, 3.75rem);
+  --header-height: 100px;
+  --hero-min-height: 780px;
+
+  /* --- UI Details --- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --border-gold-accent: 3px solid var(--color-accent-gold);
+
+  /* --- Transitions & Shadows --- */
+  --transition-fast: 0.18s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-btn: 0 4px 14px rgba(200, 162, 75, 0.28);
+  --shadow-dark: 0 10px 30px rgba(20, 33, 61, 0.25);
+}

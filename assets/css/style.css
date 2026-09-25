@@ -1,0 +1,23 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - MASTER STYLESHEET
+ * Theme Name: Cloé Caron Custom Theme
+ * Description: Lightweight, pixel-perfect, 60fps front-end architecture
+ * ==============================================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@import url('variables.css');
+@import url('global.css');
+@import url('header.css');
+@import url('hero.css');
+@import url('founder-strip.css');
+@import url('partnership.css');
+@import url('problem.css');
+@import url('model-5p.css');
+@import url('founder-section.css');
+@import url('team-testimonials.css');
+@import url('difference.css');
+@import url('cta-section.css');
+@import url('footer.css');

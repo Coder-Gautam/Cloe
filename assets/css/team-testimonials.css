@@ -1,0 +1,230 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - TEAM TESTIMONIALS SECTION (COMITÉ DE DIRECTION — ONE TEAM)
+ * Editorial 2-column testimonial cards with pre-rendered gold-bordered avatars
+ * ==============================================================================
+ */
+
+.team-testimonials-section {
+  width: 100%;
+  background-color: var(--color-bg-offwhite);
+  padding: clamp(50px, 6vw, 80px) 0 clamp(90px, 10vw, 130px);
+  position: relative;
+  z-index: 5;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header (Centered)
+   -------------------------------------------------------------------------- */
+.team-testimonials-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.team-testimonials-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary-navy);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+
+.team-testimonials-eyebrow .eyebrow-dash {
+  color: var(--color-accent-gold);
+  font-weight: 700;
+}
+
+.team-testimonials-title {
+  color: var(--color-primary-navy);
+  font-size: clamp(2.25rem, 1.8rem + 1.8vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2-Column Testimonials Grid
+   -------------------------------------------------------------------------- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(48px, 5.5vw, 72px) clamp(48px, 5.5vw, 88px);
+  margin-bottom: clamp(56px, 6.5vw, 88px);
+}
+
+/* Testimonial Card Item */
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(20, 33, 61, 0.15);
+  padding-top: clamp(28px, 3.2vw, 40px);
+  padding-bottom: clamp(24px, 3vw, 36px);
+  transition: transform var(--transition-smooth);
+}
+
+.testimonial-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Item Eyebrow Label */
+.testimonial-item-eyebrow {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary-navy);
+  margin-bottom: clamp(16px, 1.8vw, 22px);
+}
+
+/* Testimonial Quote Text */
+.testimonial-quote-text {
+  color: var(--color-text-dark);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+  line-height: 1.72;
+  font-weight: 400;
+  margin: 0 0 clamp(28px, 3.2vw, 36px) 0;
+  flex-grow: 1;
+}
+
+/* Author Details (Avatar + Name & Role) */
+.testimonial-author-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.testimonial-avatar-wrap {
+  width: 57px;
+  height: 57px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--Gold, #C8A24B);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.testimonial-avatar-img {
+  width: 57px;
+  height: 57px;
+  object-fit: contain;
+  display: block;
+}
+
+.testimonial-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonial-author-name {
+  color: var(--color-primary-navy);
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.testimonial-author-role {
+  color: var(--color-slate-gray);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Centered Action Button: Trois parmi d'autres
+   -------------------------------------------------------------------------- */
+.testimonials-bottom-action {
+  text-align: center;
+  margin-top: clamp(48px, 6vw, 76px);
+  margin-bottom: clamp(24px, 3vw, 44px);
+  position: relative;
+  z-index: 5;
+}
+
+.testimonials-bottom-action .btn {
+  display: inline-block;
+  background-color: var(--color-primary-navy);
+  border: 1px solid var(--color-primary-navy);
+  color: var(--color-white);
+  padding: 16px 44px;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 0 !important;
+  /* Strictly ZERO border-radius */
+  letter-spacing: 0.02em;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.testimonials-bottom-action .btn:hover {
+  background-color: #1b2c52;
+  border-color: #1b2c52;
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-testimonials-header {
+    margin-bottom: 32px;
+  }
+
+  .team-testimonials-title {
+    font-size: clamp(1.75rem, 1.45rem + 1.4vw, 2.15rem);
+    line-height: 1.2;
+  }
+
+  .testimonials-grid {
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .testimonial-item {
+    padding-top: 22px;
+  }
+
+  .testimonial-quote-text {
+    font-size: 15px;
+    line-height: 1.62;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-avatar-wrap,
+  .testimonial-avatar-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .testimonial-author-name {
+    font-size: 15px;
+  }
+
+  .testimonial-author-role {
+    font-size: 12.5px;
+  }
+
+  .testimonials-bottom-action .btn {
+    width: 100%;
+    text-align: center;
+    padding: 15px 24px;
+  }
+}
