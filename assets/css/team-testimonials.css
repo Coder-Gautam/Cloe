@@ -8,7 +8,7 @@
 .team-testimonials-section {
   width: 100%;
   background-color: var(--color-bg-offwhite);
-  padding: clamp(50px, 6vw, 80px) 0 clamp(90px, 10vw, 130px);
+  padding: clamp(50px, 6vw, 80px) 0 clamp(50px, 10vw, 50px);
   position: relative;
   z-index: 5;
 }
@@ -43,7 +43,7 @@
 .team-testimonials-title {
   color: var(--color-primary-navy);
   font-size: clamp(2.25rem, 1.8rem + 1.8vw, 3.25rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.16;
   letter-spacing: var(--ls-tight);
   margin: 0;

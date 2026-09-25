@@ -20,7 +20,7 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: clamp(48px, 5.5vw, 76px);
+  margin-bottom: clamp(30px, 5.5vw, 30px);
 }
 
 .problem-eyebrow {
@@ -37,6 +37,18 @@
   letter-spacing: var(--ls-tight);
   text-wrap: balance;
   margin: 0;
+}
+
+/* Scroll Scrub Letter-by-Letter Reveal */
+.problem-title .problem-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.problem-title .problem-char {
+  display: inline-block;
+  opacity: 0.15;
+  will-change: opacity;
 }
 
 /* --------------------------------------------------------------------------

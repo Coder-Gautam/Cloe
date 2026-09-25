@@ -37,7 +37,7 @@
   --color-text-body-dark: var(--color-slate-gray);
 
   /* --- Typography Tokens --- */
-  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-primary: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   /* Fluid Typography Clamps */
   --text-xs: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);       /* 11px - 12px */

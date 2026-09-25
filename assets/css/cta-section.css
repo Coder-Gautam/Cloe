@@ -40,7 +40,7 @@
 .home-cta-title {
   color: var(--color-white);
   font-size: clamp(2.25rem, 1.8rem + 1.8vw, 3.25rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.18;
   letter-spacing: var(--ls-tight);
   margin: 0 0 clamp(18px, 2.2vw, 24px) 0;

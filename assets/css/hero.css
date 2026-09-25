@@ -39,10 +39,10 @@
 .hero-gradient-overlay {
   position: absolute;
   width: 150%;
-  height: 120%;
+  height: 150%;
   pointer-events: none;
   z-index: 2;
-  background: linear-gradient(0deg, #14213D 30%, rgba(24, 40, 74, 0.5) 75%, rgba(53, 88, 163, 0) 88.95%);
+  background: linear-gradient(0deg, #14213de6 40%, rgba(24, 40, 74, 0.5) 65%, rgba(53, 88, 163, 0) 90%);
   bottom: -440px;
   left: -180px;
   transform: rotate(10deg);

@@ -160,12 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // C. Problem Section Reveal
-      if (document.getElementById('probleme')) {
-        gsap.from(['.problem-eyebrow', '.problem-title'], {
-          y: 40,
+      const problemSection = document.getElementById('probleme');
+      if (problemSection) {
+        gsap.from('.problem-eyebrow', {
+          y: 30,
           opacity: 0,
-          duration: 0.9,
-          stagger: 0.15,
+          duration: 0.8,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.problem-header',
@@ -173,6 +173,39 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleActions: 'play none none reverse'
           }
         });
+
+        // Split problem-title text letter-by-letter for scrubbed scroll reveal
+        const problemTitle = problemSection.querySelector('.problem-title');
+        if (problemTitle && typeof ScrollTrigger !== 'undefined') {
+          const rawText = problemTitle.textContent.trim();
+          problemTitle.setAttribute('aria-label', rawText);
+          const words = rawText.split(/\s+/);
+
+          problemTitle.innerHTML = words.map(word => {
+            const chars = Array.from(word).map(char => `<span class="problem-char">${char}</span>`).join('');
+            return `<span class="problem-word">${chars}</span>`;
+          }).join(' ');
+
+          const chars = problemTitle.querySelectorAll('.problem-char');
+
+          gsap.fromTo(chars,
+            {
+              opacity: 0.15
+            },
+            {
+              opacity: 1,
+              stagger: 0.03,
+              duration: 0.1,
+              ease: 'power1.inOut',
+              scrollTrigger: {
+                trigger: '.problem-header',
+                start: 'top 78%',
+                end: 'bottom 38%',
+                scrub: 0.8
+              }
+            }
+          );
+        }
 
         gsap.from('.problem-card', {
           y: 55,
@@ -408,18 +441,33 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        gsap.from('#cloe-caron .founder-photo-wrap', {
-          y: 45,
-          scale: 0.97,
-          opacity: 0,
-          duration: 1.05,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '#cloe-caron .founder-photo-col',
-            start: 'top 82%',
-            toggleActions: 'play none none reverse'
-          }
-        });
+        // Founder Photo: comes from right to left, starts at 45deg, and settles in place on scroll
+        const founderPhotoWrap = document.querySelector('#cloe-caron .founder-photo-wrap');
+        if (founderPhotoWrap && typeof ScrollTrigger !== 'undefined') {
+          const isMobile = window.innerWidth <= 768;
+          const initialX = isMobile ? 80 : 160;
+
+          gsap.fromTo(founderPhotoWrap,
+            {
+              x: initialX,
+              rotation: 45,
+              opacity: 0.35,
+              transformOrigin: 'center center'
+            },
+            {
+              x: 0,
+              rotation: 0,
+              opacity: 1,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: founderPhotoWrap,
+                start: 'top 70%', // Delayed start: only begins when photo itself is comfortably inside viewport
+                end: 'center 45%', // Finishes right when photo is centered in view
+                scrub: 1.4
+              }
+            }
+          );
+        }
       }
 
       // ----------------------------------------------------------------------
