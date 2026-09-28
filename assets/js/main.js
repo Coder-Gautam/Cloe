@@ -222,9 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // ----------------------------------------------------------------------
-      // 6. Modele 5P - Header Entrance & Pinned Scrubbed Process Timeline
+      // 6. Modele 5P (Homepage) - Header Entrance & Pinned Scrubbed Process Timeline
       // ----------------------------------------------------------------------
-      const model5pSection = document.getElementById('modele-5p');
+      const model5pSection = document.querySelector('.model-5p-section');
 
       if (model5pSection && typeof ScrollTrigger !== 'undefined') {
         // Modele 5P Header Reveal
@@ -760,6 +760,343 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       initRoyalButtons();
+
+      // ----------------------------------------------------------------------
+      // 14. Partnership Page Hero Entrance
+      // ----------------------------------------------------------------------
+      if (document.getElementById('partnership-hero')) {
+        gsap.from([
+          '#partnership-hero .partnership-eyebrow',
+          '#partnership-hero .partnership-title',
+          '#partnership-hero .partnership-subtitle'
+        ], {
+          y: 32,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out'
+        });
+
+        gsap.from('#partnership-hero .partnership-desc', {
+          y: 28,
+          opacity: 0,
+          duration: 0.85,
+          delay: 0.15,
+          ease: 'power3.out'
+        });
+
+        gsap.from('#partnership-hero .partnership-video-box', {
+          scale: 0.96,
+          opacity: 0,
+          duration: 0.95,
+          delay: 0.25,
+          ease: 'power2.out'
+        });
+
+        gsap.from('#partnership-hero .partnership-actions', {
+          y: 24,
+          opacity: 0,
+          duration: 0.85,
+          delay: 0.3,
+          ease: 'power3.out'
+        });
+      }
+
+      // ----------------------------------------------------------------------
+      // 15. Partnership Page Opportunity Section Reveal
+      // ----------------------------------------------------------------------
+      if (document.getElementById('opportunite')) {
+        gsap.from([
+          '#opportunite .opportunity-eyebrow',
+          '#opportunite .opportunity-title',
+          '#opportunite .opportunity-lead'
+        ], {
+          y: 35,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#opportunite',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+
+        gsap.from('#opportunite .opportunity-card', {
+          y: 40,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.14,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#opportunite .opportunity-grid',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+
+        gsap.from('#opportunite .opportunity-bottom-actions', {
+          y: 25,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#opportunite .opportunity-bottom-actions',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+      }
+
+      // ----------------------------------------------------------------------
+      // 16. Partnership Page Section 3: Trois Modèles Reveal
+      // ----------------------------------------------------------------------
+      if (document.getElementById('modeles')) {
+        gsap.from([
+          '#modeles .models-eyebrow',
+          '#modeles .models-title',
+          '#modeles .models-lead'
+        ], {
+          y: 35,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#modeles',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+
+        gsap.from('#modeles .model-col', {
+          y: 35,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#modeles .models-grid',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+
+        gsap.from('#modeles .models-callout', {
+          y: 25,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#modeles .models-callout',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+      }
+
+      // ----------------------------------------------------------------------
+      // 17. Partnership Page Section 4: Le Modèle 5P Interactive SVG Wheel
+      // ----------------------------------------------------------------------
+      const wheelSection = document.querySelector('.wheel-section');
+      if (wheelSection) {
+        const wheelRotator = document.getElementById('wheel-rotator');
+        const podSvgs = wheelSection.querySelectorAll('.wheel-pod-wrap .pod-svg');
+        const podWraps = wheelSection.querySelectorAll('.wheel-pod-wrap');
+        const panels = gsap.utils.toArray('.wheel-step-panel');
+        const stickyCol = wheelSection.querySelector('.wheel-sticky-col');
+
+        const wheelMm = gsap.matchMedia();
+
+        // Desktop (>= 992px): Sticky Left Wheel + Scrolling Right Steps + Synchronized Wheel Scrub
+        wheelMm.add('(min-width: 992px)', () => {
+          // Pin the left sticky column during the full scroll of the section
+          ScrollTrigger.create({
+            trigger: wheelSection,
+            start: 'top top',
+            end: 'bottom bottom',
+            pin: stickyCol,
+            pinSpacing: false,
+            anticipatePin: 1,
+            invalidateOnRefresh: true
+          });
+
+          // Master Scroll Scrub: Orbit rotates by -288deg across the 5 steps
+          if (wheelRotator) {
+            gsap.to(wheelRotator, {
+              rotation: -288,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: wheelSection,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.8,
+                invalidateOnRefresh: true
+              }
+            });
+          }
+
+          // Counter-rotation on pod SVGs: keeps every pod and label 100% upright & readable!
+          if (podSvgs.length) {
+            gsap.to(podSvgs, {
+              rotation: 288,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: wheelSection,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.8,
+                invalidateOnRefresh: true
+              }
+            });
+          }
+
+          // Active highlighting for each step panel AND corresponding wheel pod
+          panels.forEach((panel, idx) => {
+            ScrollTrigger.create({
+              trigger: panel,
+              start: 'top 55%',
+              end: 'bottom 45%',
+              onEnter: () => activateStep(idx),
+              onEnterBack: () => activateStep(idx)
+            });
+          });
+
+          function activateStep(idx) {
+            panels.forEach((p, i) => {
+              if (i === idx) p.classList.add('active');
+              else p.classList.remove('active');
+            });
+            podWraps.forEach((pod, i) => {
+              if (i === idx) pod.classList.add('active');
+              else pod.classList.remove('active');
+            });
+          }
+
+          // Clickable Pods: Direct smooth navigation to corresponding step
+          podWraps.forEach((pod, idx) => {
+            pod.setAttribute('role', 'button');
+            pod.setAttribute('tabindex', '0');
+            pod.setAttribute('aria-label', `Aller à l'étape P${idx + 1}`);
+
+            const handlePodNav = () => {
+              if (panels[idx]) {
+                if (smoother) {
+                  smoother.scrollTo(panels[idx], true, 'center center');
+                } else {
+                  panels[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+              }
+            };
+
+            pod.addEventListener('click', handlePodNav);
+            pod.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handlePodNav();
+              }
+            });
+          });
+        });
+
+        // Mobile (< 992px): Wheel gently turns as user scrolls down
+        wheelMm.add('(max-width: 991px)', () => {
+          if (wheelRotator) {
+            gsap.to(wheelRotator, {
+              rotation: -288,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: wheelSection,
+                start: 'top 75%',
+                end: 'bottom bottom',
+                scrub: 0.8
+              }
+            });
+          }
+          if (podSvgs.length) {
+            gsap.to(podSvgs, {
+              rotation: 288,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: wheelSection,
+                start: 'top 75%',
+                end: 'bottom bottom',
+                scrub: 0.8
+              }
+            });
+          }
+        });
+      }
+
+      // ----------------------------------------------------------------------
+      // 18. Partnership Page Section 5: Ce qu'on installe chez vous Reveal
+      // ----------------------------------------------------------------------
+      const installeSection = document.getElementById('ce-quon-installe');
+      if (installeSection) {
+        gsap.from([
+          '#ce-quon-installe .installe-eyebrow',
+          '#ce-quon-installe .installe-item'
+        ], {
+          y: 28,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#ce-quon-installe',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+
+      // ----------------------------------------------------------------------
+      // 19. Partnership Page Section 6: La Différence (Comparison Table) Reveal
+      // ----------------------------------------------------------------------
+      const diffTableSection = document.getElementById('la-difference');
+      if (diffTableSection) {
+        gsap.from([
+          '#la-difference .diff-header',
+          '#la-difference .diff-table-wrap'
+        ], {
+          y: 30,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.15,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#la-difference',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+
+      // ----------------------------------------------------------------------
+      // 20. Partnership Page Section 7: Le Fonds de Croissance Reveal
+      // ----------------------------------------------------------------------
+      const fondsSection = document.getElementById('fonds-croissance');
+      if (fondsSection) {
+        gsap.from([
+          '#fonds-croissance .fonds-content-col',
+          '#fonds-croissance .fonds-card-col'
+        ], {
+          y: 30,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.15,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#fonds-croissance',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
     });
 
     window.addEventListener('beforeunload', () => {

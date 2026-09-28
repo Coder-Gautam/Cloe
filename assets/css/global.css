@@ -309,6 +309,24 @@ button {
   background-color: var(--color-header-btn-hover);
 }
 
+/* Outline Dark Navy Button */
+.btn-outline-dark {
+  background-color: transparent;
+  border-color: var(--color-primary-navy);
+  color: var(--color-primary-navy);
+  padding: 14px 24px;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--color-primary-navy);
+  border-color: var(--color-primary-navy);
+  color: var(--color-white);
+}
+
+.btn-outline-dark:active {
+  background-color: var(--color-header-btn-hover);
+}
+
 /* White Button Variant */
 .btn-white {
   background-color: var(--color-white);

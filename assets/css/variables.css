@@ -40,15 +40,24 @@
   --font-primary: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   /* Fluid Typography Clamps */
-  --text-xs: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);       /* 11px - 12px */
-  --text-sm: clamp(0.8125rem, 0.78rem + 0.18vw, 0.875rem);     /* 13px - 14px */
-  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);         /* 15px - 16px */
-  --text-md: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);           /* 16px - 18px */
-  --text-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);       /* 17px - 20px */
-  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);          /* 20px - 24px */
-  --text-2xl: clamp(1.5rem, 1.35rem + 0.8vw, 2rem);           /* 24px - 32px */
-  --text-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);            /* 32px - 44px */
-  --text-hero: clamp(2.5rem, 2rem + 2.8vw, 3.875rem);          /* 40px - 62px Hero Title */
+  --text-xs: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);
+  /* 11px - 12px */
+  --text-sm: clamp(0.8125rem, 0.78rem + 0.18vw, 0.875rem);
+  /* 13px - 14px */
+  --text-base: clamp(16px, 0.9rem + 0.2vw, 18px);
+  /* 15px - 16px */
+  --text-md: clamp(18px, 0.95rem + 0.3vw, 20px);
+  /* 16px - 18px */
+  --text-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  /* 17px - 20px */
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  /* 20px - 24px */
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.8vw, 2rem);
+  /* 24px - 32px */
+  --text-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);
+  /* 32px - 44px */
+  --text-hero: clamp(2.5rem, 2rem + 2.8vw, 3.875rem);
+  /* 40px - 62px Hero Title */
 
   /* Font Weights */
   --fw-regular: 400;

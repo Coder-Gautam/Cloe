@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Wheel SVG Test</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background-color: #14213D;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wheel-assembly {
+      position: relative;
+      width: 520px;
+      height: 520px;
+    }
+
+    /* Dashed Track */
+    .wheel-rotator {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: center center;
+    }
+
+    .wheel-track-svg {
+      position: absolute;
+      width: 92.5%; /* 481 on 520 */
+      height: 92.5%;
+      top: 3.75%;
+      left: 3.75%;
+      display: block;
+      pointer-events: none;
+    }
+
+    /* Center Disc: Always Stationary */
+    .wheel-center-disc {
+      position: absolute;
+      width: 49.8%; /* 259 on 520 */
+      height: 49.8%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .wheel-center-disc img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Pod Wrappers */
+    .wheel-pod-wrap {
+      position: absolute;
+      z-index: 10;
+      transform-origin: center center;
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .wheel-pod-wrap.active {
+      filter: drop-shadow(0 0 14px rgba(200, 162, 75, 0.85));
+    }
+
+    .pod-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform-origin: center center;
+    }
+
+    /* Track radius in .wheel-assembly (520px):
+       Track width = 481px (92.5% of 520).
+       Track circle r = 233.47px.
+       In percent of 520: R = 233.47 / 520 = 44.9%
+    */
+    .pod-p1 {
+      width: 23.8%; /* 124/520 */
+      left: 50%;
+      top: calc(50% - 44.9%);
+      transform: translate(-49.9%, -40.1%);
+    }
+
+    .pod-p2 {
+      width: 21.5%; /* 112/520 */
+      left: calc(50% + 42.7%); /* R * cos(-18deg) = 44.9 * 0.9511 = 42.7% */
+      top: calc(50% - 13.9%);  /* R * sin(-18deg) = 44.9 * -0.3090 = -13.9% */
+      transform: translate(-44.1%, -39.4%);
+    }
+
+    .pod-p3 {
+      width: 21.5%; /* 112/520 */
+      left: calc(50% + 26.4%); /* R * cos(54deg) = 44.9 * 0.5878 = 26.4% */
+      top: calc(50% + 36.3%);  /* R * sin(54deg) = 44.9 * 0.8090 = 36.3% */
+      transform: translate(-50%, -40.1%);
+    }
+
+    .pod-p4 {
+      width: 26.0%; /* 135/520 */
+      left: calc(50% - 26.4%);
+      top: calc(50% + 36.3%);
+      transform: translate(-50%, -40.1%);
+    }
+
+    .pod-p5 {
+      width: 22.5%; /* 117/520 */
+      left: calc(50% - 42.7%);
+      top: calc(50% - 13.9%);
+      transform: translate(-57.9%, -41.2%);
+    }
+  </style>
+</head>
+<body>
+  <div class="wheel-assembly" id="wheel-assembly">
+    <!-- Center Disc (Stationary) -->
+    <div class="wheel-center-disc">
+      <img src="../assets/images/wheel-elements/wheel-center.svg" alt="Profitabilité">
+    </div>
+
+    <!-- Rotator Orbit -->
+    <div class="wheel-rotator" id="wheel-rotator">
+      <img src="../assets/images/wheel-elements/wheel-svg.svg" alt="" class="wheel-track-svg">
+      <div class="wheel-pod-wrap pod-p1 active" id="pod-0"><img src="../assets/images/wheel-elements/p1.svg" class="pod-svg" alt="P1"></div>
+      <div class="wheel-pod-wrap pod-p2" id="pod-1"><img src="../assets/images/wheel-elements/p2.svg" class="pod-svg" alt="P2"></div>
+      <div class="wheel-pod-wrap pod-p3" id="pod-2"><img src="../assets/images/wheel-elements/p3.svg" class="pod-svg" alt="P3"></div>
+      <div class="wheel-pod-wrap pod-p4" id="pod-3"><img src="../assets/images/wheel-elements/p4.svg" class="pod-svg" alt="P4"></div>
+      <div class="wheel-pod-wrap pod-p5" id="pod-4"><img src="../assets/images/wheel-elements/p5.svg" class="pod-svg" alt="P5"></div>
+    </div>
+  </div>
+</body>
+</html>

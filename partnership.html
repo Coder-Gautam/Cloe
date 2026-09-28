@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Propulsez votre Inc. est le partenariat qui bâtit cette organisation du futur. 12 à 18 mois auprès du dirigeant et de son comité de direction — Cloé Caron.">
+  <title>Le partenariat — Propulsez votre Inc. | Cloé Caron</title>
+
+  <!-- Google Fonts Preconnect & Archivo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Global Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <!-- Page-Specific Stylesheet (Partnership) -->
+  <link rel="stylesheet" href="assets/css/partnership.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       SITE HEADER NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Cloé Caron Accueil">
+        <img src="assets/images/logo/Cloe-logo.svg" alt="Cloé Caron Logo" class="site-logo-img" width="78" height="78">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main Navigation -->
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="site-nav-list">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="partnership.html" class="nav-link active">Le partenariat</a></li>
+          <li><a href="index.html#cloe-caron" class="nav-link">Cloé Caron</a></li>
+          <li><a href="index.html#ressources" class="nav-link">Ressources</a></li>
+          <li><a href="index.html#livre" class="nav-link">Réserver le livre</a></li>
+        </ul>
+
+        <div class="header-action">
+          <a href="#evaluer" class="btn btn-dark" id="header-cta-btn">Faire évaluer votre capacité</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="site-nav-backdrop" id="site-nav-backdrop" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       GSAP SCROLLSMOOTHER WRAPPER
+       ========================================================================= -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="main-content">
+
+        <!-- =====================================================================
+             SECTION 1: PARTNERSHIP HERO & VIDEO COMPONENT
+             ===================================================================== -->
+        <section class="partnership-hero" id="partnership-hero" aria-label="Le partenariat — Propulsez votre Inc.">
+          <div class="container">
+            <div class="partnership-hero-grid">
+
+              <!-- Left Column: Eyebrow, Title, Subtitle & Video -->
+              <div class="partnership-col-left">
+                <div class="partnership-eyebrow eyebrow">
+                  <span class="eyebrow-dash">—</span> LE PARTENARIAT
+                </div>
+                <h1 class="partnership-title">
+                  Propulsez votre Inc.
+                </h1>
+                <p class="partnership-subtitle">
+                  Les entreprises cessent rarement de croître par manque d’occasions. Elles cessent de croître parce que
+                  l’organisation qui a bâti le succès d’aujourd’hui doit maintenant bâtir celui du futur.
+                </p>
+
+                <!-- Video Container (Exact Figma Design with assets/images/elements/play-btn.svg) -->
+                <div class="partnership-video-box" id="partnership-video-box" role="region"
+                  aria-label="Lecteur vidéo de présentation">
+                  <button class="video-play-btn" type="button" aria-label="Lancer la vidéo">
+                    <img src="assets/images/elements/play-btn.svg" alt="Play" class="play-btn-img" width="80"
+                      height="80">
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right Column: Narrative & Action Buttons -->
+              <div class="partnership-col-right">
+                <div class="partnership-desc">
+                  <p class="partnership-desc-p">
+                    Propulsez votre Inc. est le partenariat qui bâtit cette organisation du futur. 12 à 18 mois auprès
+                    du dirigeant et de son comité de direction, pour amener l’entreprise au prochain niveau de
+                    croissance.
+                  </p>
+                  <p class="partnership-desc-p">
+                    Les revenus, les marges, le multiple : ce sont des résultats. Ce qui les génère, c’est la capacité
+                    de l’organisation à créer de la valeur de façon répétée, prévisible, et portée par l’organisation
+                    elle-même. C’est cette capacité organisationnelle qu’on bâtit.
+                  </p>
+                </div>
+
+                <div class="partnership-actions">
+                  <div class="partnership-btn-stack">
+                    <a href="#evaluer" class="btn btn-primary" id="btn-partenariat-evaluer">
+                      Faire évaluer votre capacité de croissance
+                    </a>
+                    <a href="#livre" class="btn btn-outline" id="btn-partenariat-livre">
+                      Réservez votre copie du livre
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 2: THE OPPORTUNITY SECTION (L'OPPORTUNITÉ)
+             ===================================================================== -->
+        <section class="opportunity-section" id="opportunite"
+          aria-label="L'opportunité — Vous aurez besoin de nous quand">
+          <div class="container">
+            <!-- Section Header (Centered) -->
+            <header class="opportunity-header">
+              <div class="opportunity-eyebrow eyebrow">
+                <span class="eyebrow-dash">—</span> L'OPPORTUNITÉ
+              </div>
+              <h2 class="opportunity-title">
+                Vous aurez besoin de nous quand :
+              </h2>
+              <p class="opportunity-lead">
+                Dans ces trois cas, la complexité de l’entreprise dépasse ce que son organisation actuelle peut porter.
+              </p>
+            </header>
+
+            <!-- 3-Column Opportunity Cards Grid -->
+            <div class="opportunity-grid">
+
+              <!-- Card 01: La croissance -->
+              <article class="opportunity-card">
+                <div class="opportunity-card-icon-wrap">
+                  <img src="assets/images/home-assets/problem-icon-1.png" alt="Type 01" class="opportunity-card-icon"
+                    width="58" height="58" loading="lazy">
+                </div>
+                <div class="opportunity-card-type">TYPE 01</div>
+                <h3 class="opportunity-card-title">La croissance</h3>
+                <p class="opportunity-card-desc">L'entreprise change d'échelle plus vite que son organisation.</p>
+
+                <ul class="opportunity-list">
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une croissance qui s'accélère</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une croissance qui plafonne</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une complexité qui dépasse les systèmes en place</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">La volonté de bâtir une entreprise qui durera</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Card 02: La direction -->
+              <article class="opportunity-card">
+                <div class="opportunity-card-icon-wrap">
+                  <img src="assets/images/home-assets/problem-icon-1.png" alt="Type 02" class="opportunity-card-icon"
+                    width="58" height="58" loading="lazy">
+                </div>
+                <div class="opportunity-card-type">TYPE 02</div>
+                <h3 class="opportunity-card-title">La direction</h3>
+                <p class="opportunity-card-desc">Ceux qui dirigent changent, et la capacité de l'entreprise se joue à ce
+                  niveau.</p>
+
+                <ul class="opportunity-list">
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une relève à organiser</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Un nouveau CEO en poste</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Un comité de direction qui atteint ses limites</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une réorganisation majeure</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Card 03: La transaction -->
+              <article class="opportunity-card">
+                <div class="opportunity-card-icon-wrap">
+                  <img src="assets/images/home-assets/problem-icon-1.png" alt="Type 03" class="opportunity-card-icon"
+                    width="58" height="58" loading="lazy">
+                </div>
+                <div class="opportunity-card-type">TYPE 03</div>
+                <h3 class="opportunity-card-title">La transaction</h3>
+                <p class="opportunity-card-desc">Le capital bouge, et ce qu'on achète ou ce qu'on vend, c'est la
+                  capacité.</p>
+
+                <ul class="opportunity-list">
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une acquisition à intégrer</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une acquisition à préparer</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">Une vente à préparer</span>
+                  </li>
+                  <li class="opportunity-list-item">
+                    <span class="opportunity-item-arrow" aria-hidden="true">&rarr;</span>
+                    <span class="opportunity-item-text">L'arrivée d'un investisseur</span>
+                  </li>
+                </ul>
+              </article>
+
+            </div>
+
+            <!-- Bottom Centered Action Buttons -->
+            <div class="opportunity-bottom-actions">
+              <a href="#evaluer" class="btn btn-dark" id="btn-opp-evaluer">
+                Faire évaluer votre capacité de croissance
+              </a>
+              <a href="index.html#cloe-caron" class="btn btn-outline-dark" id="btn-opp-cloe">
+                Qui est Cloé Caron
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 3: THREE MODELS / 25 ANS D'IMPACT (TROIS MODÈLES)
+             ===================================================================== -->
+        <section class="models-section" id="modeles" aria-label="Trois modèles — 25 ans d'impact">
+          <div class="container">
+
+            <!-- Section Header (Left-aligned) -->
+            <header class="models-header">
+              <div class="models-eyebrow eyebrow">
+                <span class="eyebrow-dash">—</span> 25 ANS D'IMPACT
+              </div>
+              <h2 class="models-title">
+                Trois modèles, pour répondre<br>à tous les besoins de votre<br>entreprise.
+              </h2>
+              <p class="models-lead">
+                Cloé a d’abord travaillé sur la personne, puis sur l’équipe, et maintenant sur l’entreprise. Elle a
+                consolidé 25 ans d’expérience auprès des entrepreneurs et des leaders dans trois modèles.
+              </p>
+            </header>
+
+            <!-- Thin Full-Width Divider Line -->
+            <hr class="models-divider" aria-hidden="true">
+
+            <!-- 3 Columns Evolution Grid -->
+            <div class="models-grid">
+
+              <!-- Column 1: La personne -->
+              <article class="model-col">
+                <div class="model-col-category">LA PERSONNE</div>
+                <h3 class="model-col-title">Osez vous propulser</h3>
+                <div class="model-col-subtitle">Les 5 Clés</div>
+                <div class="model-col-separator" aria-hidden="true"></div>
+                <div class="model-col-body">
+                  <p>
+                    Comment un leader exprime son plein potentiel et reconnaît sa Contribution Stratégique Unique
+                    (CSU™), et trouve l’énergie de la porter.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Column 2: L'équipe -->
+              <article class="model-col">
+                <div class="model-col-category">L'ÉQUIPE</div>
+                <h3 class="model-col-title">Propulsez votre équipe</h3>
+                <div class="model-col-subtitle">Le 5C</div>
+                <div class="model-col-separator" aria-hidden="true"></div>
+                <div class="model-col-body">
+                  <p>
+                    Comment une équipe de gestionnaires devient une véritable équipe de direction, autour d’un contrat
+                    d’équipe OneTeam™ clair.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Column 3: L'entreprise -->
+              <article class="model-col">
+                <div class="model-col-category">L'ENTREPRISE</div>
+                <h3 class="model-col-title">Propulsez votre Inc.</h3>
+                <div class="model-col-subtitle">Le 5P</div>
+                <div class="model-col-separator" aria-hidden="true"></div>
+                <div class="model-col-body">
+                  <p class="model-highlight">
+                    Comment l’organisation entière acquiert la capacité de porter sa propre croissance, au-delà de ceux
+                    qui la dirigent.
+                  </p>
+                  <p>
+                    C’est le modèle de ce partenariat, et celui du troisième livre. Les deux qui l’ont précédé
+                    travaillaient la même question à une échelle plus petite.
+                  </p>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Bottom Callout Note with Gold Vertical Line -->
+            <div class="models-callout">
+              <p class="models-callout-text">
+                Un fil conducteur traverse les trois : la <strong class="callout-strong-navy">Contribution Stratégique
+                  Unique™</strong> — ce que cette personne, cette équipe, cette entreprise sont les seules à pouvoir
+                faire. C’est là que commence le premier des cinq P.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 4: LE MODÈLE 5P (INTERACTIVE STICKY WHEEL & 5 STEPS)
+             ===================================================================== -->
+        <section class="wheel-section" id="modele-5p" aria-label="Le Modèle 5P — Accompagnement stratégique">
+          <div class="wheel-container-full">
+            <div class="wheel-layout-grid">
+
+              <!-- Left Column: Sticky Pinned 5P Wheel -->
+              <div class="wheel-sticky-col">
+                <div class="wheel-graphic-wrapper">
+                  <div class="wheel-assembly" id="wheel-assembly" role="img"
+                    aria-label="Modèle 5P interactif — Profitabilité, Pourquoi, Personnes, Processus, Propulsion">
+                    <!-- Center Stationary Disc: Profitabilité -->
+                    <div class="wheel-center-disc" id="wheel-center-disc">
+                      <img src="assets/images/wheel-elements/wheel-center.svg" alt="Profitabilité" width="259"
+                        height="259" loading="eager">
+                    </div>
+
+                    <!-- Orbiting Track: Dashed Gold Ring + 5 Step Pods -->
+                    <div class="wheel-rotator" id="wheel-rotator">
+                      <img src="assets/images/wheel-elements/wheel-svg.svg" alt="" class="wheel-track-svg" width="481"
+                        height="481" loading="eager">
+
+                      <div class="wheel-pod-wrap pod-p1 active" id="wheel-pod-0" data-step="0">
+                        <img src="assets/images/wheel-elements/p1.svg" alt="P1 Pourquoi" class="pod-svg" width="124"
+                          height="113">
+                      </div>
+                      <div class="wheel-pod-wrap pod-p2" id="wheel-pod-1" data-step="1">
+                        <img src="assets/images/wheel-elements/p2.svg" alt="P2 Personnes" class="pod-svg" width="112"
+                          height="115">
+                      </div>
+                      <div class="wheel-pod-wrap pod-p3" id="wheel-pod-2" data-step="2">
+                        <img src="assets/images/wheel-elements/p3.svg" alt="P3 Processus" class="pod-svg" width="112"
+                          height="113">
+                      </div>
+                      <div class="wheel-pod-wrap pod-p4" id="wheel-pod-3" data-step="3">
+                        <img src="assets/images/wheel-elements/p4.svg" alt="P4 Profitabilité" class="pod-svg"
+                          width="135" height="113">
+                      </div>
+                      <div class="wheel-pod-wrap pod-p5" id="wheel-pod-4" data-step="4">
+                        <img src="assets/images/wheel-elements/p5.svg" alt="P5 Propulsion" class="pod-svg" width="117"
+                          height="110">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: 5 Sequential Scrolling Panels -->
+              <div class="wheel-content-col">
+
+                <!-- Step 1: P1 Pourquoi -->
+                <article class="wheel-step-panel active" id="step-panel-0" data-step="0">
+                  <div class="step-eyebrow">
+                    <span class="step-num">P1</span>
+                    <span class="step-dash">—</span>
+                    <span class="step-label">POURQUOI</span>
+                  </div>
+                  <h3 class="step-title">
+                    Pourquoi changeons-nous, et quelle vision voulons-nous construire ?
+                  </h3>
+                  <p class="step-desc">
+                    On comprend pourquoi l'organisation existe, où elle veut aller, et pourquoi elle doit évoluer
+                    maintenant.
+                  </p>
+                  <div class="step-subblock">
+                    <div class="step-subhead">CE QUE ÇA DONNE</div>
+                    <div class="step-takeaway">
+                      Une organisation alignée autour d'une vision commune.
+                    </div>
+                  </div>
+                  <div class="step-subblock">
+                    <div class="step-subhead">LA DÉCISION</div>
+                    <div class="step-quote">
+                      « Sommes-nous prêts à construire ensemble ? »
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Step 2: P2 Personnes -->
+                <article class="wheel-step-panel" id="step-panel-1" data-step="1">
+                  <div class="step-eyebrow">
+                    <span class="step-num">P2</span>
+                    <span class="step-dash">—</span>
+                    <span class="step-label">PERSONNES</span>
+                  </div>
+                  <h3 class="step-title">
+                    Qui devons-nous devenir pour réussir ?
+                  </h3>
+                  <p class="step-desc">
+                    On aligne les leaders autour d’une même façon de collaborer et de décider.
+                  </p>
+                  <div class="step-subblock">
+                    <div class="step-subhead">CE QUE ÇA DONNE</div>
+                    <div class="step-takeaway">
+                      Une véritable équipe de direction.
+                    </div>
+                  </div>
+                  <div class="step-subblock">
+                    <div class="step-subhead">LA DÉCISION</div>
+                    <div class="step-quote">
+                      « L’équipe est-elle prête à fonctionner comme une seule équipe ? »
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Step 3: P3 Processus -->
+                <article class="wheel-step-panel" id="step-panel-2" data-step="2">
+                  <div class="step-eyebrow">
+                    <span class="step-num">P3</span>
+                    <span class="step-dash">—</span>
+                    <span class="step-label">PROCESSUS</span>
+                  </div>
+                  <h3 class="step-title">
+                    Quels systèmes devons-nous bâtir pour réussir durablement ?
+                  </h3>
+                  <p class="step-desc">
+                    On met en place le système d’exploitation qui permet d’exécuter la stratégie avec discipline.
+                  </p>
+                  <div class="step-subblock">
+                    <div class="step-subhead">CE QUE ÇA DONNE</div>
+                    <div class="step-takeaway">
+                      Une organisation qui exécute avec discipline.
+                    </div>
+                  </div>
+                  <div class="step-subblock">
+                    <div class="step-subhead">LA DÉCISION</div>
+                    <div class="step-quote">
+                      « Les nouveaux systèmes fonctionnent-ils de façon autonome ? »
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Step 4: P4 Profitabilité -->
+                <article class="wheel-step-panel" id="step-panel-3" data-step="3">
+                  <div class="step-eyebrow">
+                    <span class="step-num">P4</span>
+                    <span class="step-dash">—</span>
+                    <span class="step-label">PROFITABILITÉ</span>
+                  </div>
+                  <h3 class="step-title">
+                    Comment créer davantage de valeur avec les mêmes ressources ?
+                  </h3>
+                  <p class="step-desc">
+                    On accroît la performance de l'organisation, et on réinvestit ce que la croissance génère.
+                  </p>
+                  <div class="step-subblock">
+                    <div class="step-subhead">CE QUE ÇA DONNE</div>
+                    <div class="step-takeaway">
+                      Une entreprise qui crée plus de valeur avec les mêmes ressources.
+                    </div>
+                  </div>
+                  <div class="step-subblock">
+                    <div class="step-subhead">LA DÉCISION</div>
+                    <div class="step-quote">
+                      « Sommes-nous prêts à accélérer notre prochaine phase de croissance ? »
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Step 5: P5 Propulsion -->
+                <article class="wheel-step-panel" id="step-panel-4" data-step="4">
+                  <div class="step-eyebrow">
+                    <span class="step-num">P5</span>
+                    <span class="step-dash">—</span>
+                    <span class="step-label">PROPULSION</span>
+                  </div>
+                  <h3 class="step-title">
+                    Comment maintenir cet élan au cours des prochaines années ?
+                  </h3>
+                  <p class="step-desc">
+                    L’organisation poursuit sa croissance d’elle-même, et continue d’innover.
+                  </p>
+                  <div class="step-subblock">
+                    <div class="step-subhead">CE QUE ÇA DONNE</div>
+                    <div class="step-takeaway">
+                      Une capacité de croissance qui est durable.
+                    </div>
+                  </div>
+                  <div class="step-subblock">
+                    <div class="step-subhead">LA DÉCISION</div>
+                    <div class="step-quote">
+                      « Quelle est la prochaine ambition que nous allons construire ensemble ? »
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =======================================================================
+             SECTION 5: CE QU'ON INSTALLE CHEZ VOUS
+             ======================================================================= -->
+        <section class="installe-section" id="ce-quon-installe" aria-label="Ce qu'on installe chez vous">
+          <div class="container">
+            <div class="installe-content-wrap">
+              <div class="installe-eyebrow">
+                <span class="eyebrow-dash">—</span>
+                <span class="eyebrow-label">CE QU'ON INSTALLE CHEZ VOUS</span>
+              </div>
+              <ul class="installe-list" role="list">
+                <li class="installe-item">
+                  <p class="installe-text">Un engagement de 12 à 18 mois auprès du dirigeant et de son comité de
+                    direction.</p>
+                </li>
+                <li class="installe-item">
+                  <p class="installe-text">Un diagnostic mesuré au départ, remesuré en cours de route pour prouver le
+                    mouvement.</p>
+                </li>
+                <li class="installe-item">
+                  <p class="installe-text">Du travail dans vos réunions de direction réelles.</p>
+                </li>
+                <li class="installe-item">
+                  <p class="installe-text">Une architecture de décision écrite : qui décide, quand, sur quelle
+                    information.</p>
+                </li>
+                <li class="installe-item">
+                  <p class="installe-text">Un rythme trimestriel qui tient après notre départ.</p>
+                </li>
+                <li class="installe-item">
+                  <p class="installe-text">Une relève identifiée, et le plan qui la prépare.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- =======================================================================
+             SECTION 6: LA DIFFÉRENCE (COMPARISON TABLE)
+             ======================================================================= -->
+        <section class="diff-section" id="la-difference" aria-label="La Différence">
+          <div class="diff-container-full">
+            <!-- Header: Eyebrow + Centered Title -->
+            <div class="diff-header">
+              <div class="diff-eyebrow">
+                <span class="eyebrow-dash">—</span>
+                <span class="eyebrow-label">LA DIFFÉRENCE</span>
+              </div>
+              <h2 class="diff-title">
+                Un coach, un cabinet, un<br>
+                cadre intérimaire — et nous.
+              </h2>
+            </div>
+
+            <!-- Comparison Table Component (Full-Width, Rock-Solid) -->
+            <div class="diff-table-wrap">
+              <!-- Single Absolute Frosted Gold Card behind o2Coaching -->
+              <div class="diff-highlight-bg" aria-hidden="true"></div>
+              <div class="diff-table-inner">
+
+                <table class="diff-table" aria-label="Comparatif des modèles d'accompagnement">
+                  <colgroup>
+                    <col class="col-spec-label">
+                    <col class="col-spec-highlight">
+                    <col class="col-spec-other">
+                    <col class="col-spec-other">
+                    <col class="col-spec-other">
+                  </colgroup>
+                  <thead>
+                    <tr class="diff-head-row">
+                      <th class="diff-th-label" scope="col"></th>
+                      <th class="diff-th-highlight" scope="col">
+                        <span class="diff-brand-title">o2Coaching</span>
+                      </th>
+                      <th class="diff-th-other" scope="col">Coach exécutif</th>
+                      <th class="diff-th-other" scope="col">Cabinet-conseil</th>
+                      <th class="diff-th-other" scope="col">Cadre intérimaire</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Row 1: OBJET DU MANDAT -->
+                    <tr>
+                      <td class="diff-td-label" scope="row">OBJET DU MANDAT</td>
+                      <td class="diff-td-highlight">L'organisation</td>
+                      <td class="diff-td-other">L'individu</td>
+                      <td class="diff-td-other">Le livrable</td>
+                      <td class="diff-td-other">Le poste</td>
+                    </tr>
+
+                    <!-- Row 2: CE QUI RESTE APRÈS -->
+                    <tr>
+                      <td class="diff-td-label" scope="row">CE QUI RESTE APRÈS</td>
+                      <td class="diff-td-highlight">La capacité</td>
+                      <td class="diff-td-other">La relation</td>
+                      <td class="diff-td-other">Le rapport</td>
+                      <td class="diff-td-other">Le vide</td>
+                    </tr>
+
+                    <!-- Row 3: DURÉE -->
+                    <tr>
+                      <td class="diff-td-label" scope="row">DURÉE</td>
+                      <td class="diff-td-highlight">12 à 18 mois</td>
+                      <td class="diff-td-other">Continu</td>
+                      <td class="diff-td-other">Le projet</td>
+                      <td class="diff-td-other">Le remplacement</td>
+                    </tr>
+
+                    <!-- Row 4: MESURE -->
+                    <tr>
+                      <td class="diff-td-label" scope="row">MESURE</td>
+                      <td class="diff-td-highlight">Avant / après, instrumentée</td>
+                      <td class="diff-td-other">Perception</td>
+                      <td class="diff-td-other">Recommandations</td>
+                      <td class="diff-td-other">Continuité</td>
+                    </tr>
+
+                    <!-- Row 5: QUI EST DANS LA SALLE -->
+                    <tr>
+                      <td class="diff-td-label" scope="row">QUI EST DANS LA SALLE</td>
+                      <td class="diff-td-highlight">Le comité de direction</td>
+                      <td class="diff-td-other">Le dirigeant seul</td>
+                      <td class="diff-td-other">Une équipe externe</td>
+                      <td class="diff-td-other">Le remplaçant</td>
+                    </tr>
+
+                    <!-- Row 6: SORTIE PRÉVUE -->
+                    <tr class="diff-row-last">
+                      <td class="diff-td-label" scope="row">SORTIE PRÉVUE</td>
+                      <td class="diff-td-highlight">Oui, par design</td>
+                      <td class="diff-td-other">Non définie</td>
+                      <td class="diff-td-other">Fin de mandat</td>
+                      <td class="diff-td-other">Fin de contrat</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =======================================================================
+             SECTION 7: LE FONDS DE CROISSANCE
+             ======================================================================= -->
+        <section class="fonds-section" id="fonds-croissance" aria-label="Le Fonds de Croissance">
+          <div class="container">
+            <div class="fonds-grid">
+              <!-- Left Column: Editorial & CTA -->
+              <div class="fonds-content-col">
+                <div class="fonds-eyebrow">
+                  <span class="eyebrow-dash">—</span>
+                  <span class="eyebrow-label">LE FONDS DE CROISSANCE</span>
+                </div>
+                <h2 class="fonds-title">
+                  Cinq entreprises<br>
+                  à la fois.
+                </h2>
+                <div class="fonds-text-body">
+                  <p class="fonds-lead">
+                    Ce que le Fonds investit, c'est le temps de Cloé Caron : 12 à 18 mois auprès d'un dirigeant et de son comité de direction, jusqu'à ce que l'organisation porte sa croissance elle-même.
+                  </p>
+                  <p class="fonds-desc">
+                    Le portefeuille reste petit pour une raison simple : elle est dans la salle. Les cinq passages se font avec le comité au complet, dans vos réunions de direction réelles, pas dans une salle de formation.
+                  </p>
+                </div>
+                <div class="fonds-action">
+                  <a href="#contact" class="btn btn-gold fonds-btn">
+                    Faire évaluer votre capacité de croissance
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Column: Framed Specification Card -->
+              <div class="fonds-card-col">
+                <div class="fonds-spec-card">
+                  <!-- Row 1: DURÉE -->
+                  <div class="spec-row">
+                    <span class="spec-label">DURÉE</span>
+                    <span class="spec-value">L'organisation</span>
+                  </div>
+
+                  <!-- Row 2: POINT D'ENTRÉE -->
+                  <div class="spec-row">
+                    <span class="spec-label">POINT D'ENTRÉE</span>
+                    <span class="spec-value">Une conversation</span>
+                  </div>
+
+                  <!-- Row 3: PARTICIPANTS -->
+                  <div class="spec-row">
+                    <span class="spec-label">PARTICIPANTS</span>
+                    <span class="spec-value">PDG, entrepreneur ou comité de direction</span>
+                  </div>
+
+                  <!-- Row 4: FORMAT -->
+                  <div class="spec-row">
+                    <span class="spec-label">FORMAT</span>
+                    <span class="spec-value">Séances de comité et coaching</span>
+                  </div>
+
+                  <!-- Row 5: TAILLE VISÉE -->
+                  <div class="spec-row">
+                    <span class="spec-label">TAILLE VISÉE</span>
+                    <span class="spec-value">30 à 500 employés</span>
+                  </div>
+
+                  <!-- Row 6: FIN DU MANDAT -->
+                  <div class="spec-row">
+                    <span class="spec-label">FIN DU MANDAT</span>
+                    <span class="spec-value">Quand vous êtes autonome</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =======================================================================
+             FINAL CTA BANNER SECTION (COMMENCER)
+             ======================================================================= -->
+        <section class="home-cta-section" id="commencer" aria-label="Commencer — Évaluation de votre capacité de croissance">
+          <div class="container">
+            <div class="home-cta-inner">
+              <!-- Centered Eyebrow -->
+              <div class="home-cta-eyebrow eyebrow">
+                <span class="eyebrow-dash">—</span> COMMENCER
+              </div>
+
+              <!-- Impact Headline -->
+              <h2 class="home-cta-title">
+                Repartez avec l’évaluation de votre<br>
+                capacité de croissance.
+              </h2>
+
+              <!-- Descriptive Subtitle -->
+              <p class="home-cta-lead">
+                Nous accompagnons un nombre restreint d’entreprises à la fois — l’évaluation, elle,<br>
+                vous reste.
+              </p>
+
+              <!-- Dual Action CTAs -->
+              <div class="home-cta-actions">
+                <a href="#evaluer" class="btn btn-primary" id="btn-evaluer-croissance">
+                  Faire évaluer votre capacité de croissance
+                </a>
+                <a href="#prevente-livre" class="btn btn-outline" id="btn-prevente-livre">
+                  Rejoindre le cercle de prévente du livre
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- =======================================================================
+           SITE FOOTER
+           ======================================================================= -->
+      <footer class="site-footer" id="site-footer" aria-label="Pied de page">
+        <div class="container">
+          <!-- 3-Column Content Grid -->
+          <div class="footer-main-grid">
+            <!-- Column 1: Brand & Bio -->
+            <div class="footer-brand-col">
+              <a href="index.html" class="footer-logo" aria-label="Cloé Caron Accueil">
+                <img src="assets/images/logo/Cloe-logo.svg" alt="Cloé Caron" width="72" height="72"
+                  class="footer-logo-img">
+              </a>
+              <p class="footer-brand-desc">
+                Cloé Caron accompagne les<br>
+                dirigeants à bâtir une entreprise qui<br>
+                grandit sans eux.
+              </p>
+            </div>
+
+            <!-- Column 2: Navigation -->
+            <div class="footer-nav-col">
+              <h3 class="footer-col-title">NAVIGATION</h3>
+              <ul class="footer-links-list">
+                <li>
+                  <a href="index.html" class="footer-link">
+                    <span class="footer-bullet">•</span> Accueil
+                  </a>
+                </li>
+                <li>
+                  <a href="partnership.html" class="footer-link">
+                    <span class="footer-bullet">•</span> Le partenariat
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html#cloe-caron" class="footer-link">
+                    <span class="footer-bullet">•</span> Cloé Caron
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 3: Contenu -->
+            <div class="footer-content-col">
+              <h3 class="footer-col-title">CONTENU</h3>
+              <ul class="footer-links-list">
+                <li>
+                  <a href="#podcast" class="footer-link">
+                    <span class="footer-bullet">•</span> Podcast — Confessions de Leaders
+                  </a>
+                </li>
+                <li>
+                  <a href="#youtube" class="footer-link">
+                    <span class="footer-bullet">•</span> Chaîne YouTube
+                  </a>
+                </li>
+                <li>
+                  <a href="#prevente-livre" class="footer-link">
+                    <span class="footer-bullet">•</span> Lancement du prochain livre
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sub-Footer Bottom Bar -->
+          <div class="footer-bottom-row">
+            <p class="footer-copyright">
+              © 2026 O2 Coaching — Cloé Caron
+            </p>
+            <span class="footer-direction">
+              Maquette — direction 2a
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCRIPTS (GSAP Local Suite: Core + ScrollTrigger + ScrollSmoother + ScrollToPlugin)
+       ========================================================================= -->
+  <script src="assets/gsap-public/minified/gsap.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollTrigger.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollSmoother.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js?v=2.0" defer></script>
+
+</body>
+
+</html>

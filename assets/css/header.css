@@ -70,18 +70,8 @@
 }
 
 .nav-link.active {
-  font-weight: var(--fw-bold);
-  color: var(--color-primary-navy);
-}
-
-/* Accent link in nav: Réserver le livre */
-.nav-link-accent {
-  color: var(--color-accent-gold) !important;
   font-weight: var(--fw-semibold);
-}
-
-.nav-link-accent:hover {
-  color: var(--color-accent-gold-hover) !important;
+  color: var(--color-accent-gold);
 }
 
 /* Header Action Button */
@@ -102,7 +92,7 @@
 }
 
 .header-action .btn:hover {
-  background-color: #1c2e54;
+  background-color: var(--color-header-btn-hover);
 }
 
 /* Mobile Hamburger Toggle */
