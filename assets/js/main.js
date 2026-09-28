@@ -441,32 +441,53 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        // Founder Photo: comes from right to left, starts at 45deg, and settles in place on scroll
+        // Option 3: Cinematic Soft Focus & Scale-In (Timeless, Warm & Executive Presence)
         const founderPhotoWrap = document.querySelector('#cloe-caron .founder-photo-wrap');
-        if (founderPhotoWrap && typeof ScrollTrigger !== 'undefined') {
-          const isMobile = window.innerWidth <= 768;
-          const initialX = isMobile ? 80 : 160;
+        const founderPhotoImg = document.querySelector('#cloe-caron .founder-photo-img');
 
-          gsap.fromTo(founderPhotoWrap,
-            {
-              x: initialX,
-              rotation: 45,
-              opacity: 0.35,
-              transformOrigin: 'center center'
-            },
-            {
-              x: 0,
-              rotation: 0,
-              opacity: 1,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: founderPhotoWrap,
-                start: 'top 70%', // Delayed start: only begins when photo itself is comfortably inside viewport
-                end: 'center 45%', // Finishes right when photo is centered in view
-                scrub: 1.4
-              }
+        if (founderPhotoWrap && typeof ScrollTrigger !== 'undefined') {
+          // Clear any previous clipPath or transform offsets
+          gsap.set(founderPhotoWrap, { clearProps: 'clipPath,x,rotation' });
+          if (founderPhotoImg) gsap.set(founderPhotoImg, { clearProps: 'yPercent' });
+
+          const photoTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: founderPhotoWrap,
+              start: 'top 78%',
+              toggleActions: 'play none none reverse'
             }
+          });
+
+          // 1. Frame glides up into place with rich smooth elevation
+          photoTl.fromTo(
+            founderPhotoWrap,
+            { y: 40, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.1,
+              ease: 'power3.out'
+            },
+            0
           );
+
+          // 2. Cinematic Lens Pull: photo starts in soft artistic focus + slight zoom, then pulls into crystal sharp focus
+          if (founderPhotoImg) {
+            photoTl.fromTo(
+              founderPhotoImg,
+              {
+                scale: 1.08,
+                filter: 'blur(10px)'
+              },
+              {
+                scale: 1,
+                filter: 'blur(0px)',
+                duration: 1.4,
+                ease: 'power2.out'
+              },
+              0
+            );
+          }
         }
       }
 
@@ -487,18 +508,51 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        gsap.from('.testimonial-item', {
-          y: 20,
-          opacity: 0,
-          duration: 0.85,
-          stagger: 0.14,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.testimonials-grid',
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
+        const testimonialCards = gsap.utils.toArray('.testimonial-item');
+        if (testimonialCards.length > 0) {
+          const isMobile = window.innerWidth < 768;
+          const slideDistance = isMobile ? 80 : 180;
+
+          // Scrubbed over-the-scroll timeline: cards glide smoothly from sides into actual places
+          const testimonialsTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: '.testimonials-grid',
+              start: 'top 88%',
+              end: 'center 50%',
+              scrub: 1.2
+            }
+          });
+
+          // Row 1, Left Card (Patricia Gauthier): moves Left -> Right into position
+          if (testimonialCards[0]) {
+            testimonialsTl.fromTo(
+              testimonialCards[0],
+              { x: -slideDistance, opacity: 0 },
+              { x: 0, opacity: 1, ease: 'power2.out', duration: 1 },
+              0
+            );
           }
-        });
+
+          // Row 1, Right Card (Sylvain Corbeil): moves Right -> Left into position
+          if (testimonialCards[1]) {
+            testimonialsTl.fromTo(
+              testimonialCards[1],
+              { x: slideDistance, opacity: 0 },
+              { x: 0, opacity: 1, ease: 'power2.out', duration: 1 },
+              0
+            );
+          }
+
+          // Row 2, Left Card (Samba Sow): moves Left -> Right into position
+          if (testimonialCards[2]) {
+            testimonialsTl.fromTo(
+              testimonialCards[2],
+              { x: -slideDistance, opacity: 0 },
+              { x: 0, opacity: 1, ease: 'power2.out', duration: 1 },
+              0.15
+            );
+          }
+        }
 
         gsap.from('.testimonials-bottom-action', {
           y: 15,
@@ -514,25 +568,92 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // ----------------------------------------------------------------------
-      // 10. La Différence Section Reveal
+      // 10. La Différence Section - Dancing Words Reveal Animation
       // ----------------------------------------------------------------------
-      if (document.getElementById('difference')) {
-        gsap.from([
-          '#difference .difference-eyebrow',
-          '#difference .difference-title',
-          '#difference .difference-action'
-        ], {
-          y: 40,
+      const diffSection = document.getElementById('difference');
+      if (diffSection) {
+        const titleAccent = diffSection.querySelector('.title-accent');
+        const titleMain = diffSection.querySelector('.title-main');
+
+        // Helper to split text into distinct words for playful dancing animation
+        const prepareDanceWords = (el) => {
+          if (!el) return [];
+          const text = el.textContent.trim();
+          el.setAttribute('aria-label', text);
+          const words = text.split(/\s+/);
+          el.innerHTML = words.map(word => `<span class="dance-word">${word}</span>`).join(' ');
+          return el.querySelectorAll('.dance-word');
+        };
+
+        const accentWords = prepareDanceWords(titleAccent);
+        const mainWords = prepareDanceWords(titleMain);
+
+        // Pre-set playful tilted dance posture so elements never flash or jump
+        gsap.set([...accentWords, ...mainWords], {
+          y: 45,
           opacity: 0,
-          duration: 0.95,
-          stagger: 0.18,
-          ease: 'power3.out',
+          scale: 0.65,
+          rotation: (i) => (i % 2 === 0 ? -11 : 11),
+          transformOrigin: '50% 100%'
+        });
+
+        const danceTl = gsap.timeline({
           scrollTrigger: {
-            trigger: '#difference',
-            start: 'top 85%',
+            trigger: diffSection,
+            start: 'top 75%',
             toggleActions: 'play none none reverse'
           }
         });
+
+        // 1. Eyebrow reveals smoothly
+        danceTl.from('#difference .difference-eyebrow', {
+          y: 20,
+          opacity: 0,
+          duration: 0.45,
+          ease: 'power3.out'
+        });
+
+        // 2. Line 1 (Gold Accent): Words groove and dance in fast & snappy
+        if (accentWords.length > 0) {
+          danceTl.to(
+            accentWords,
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              rotation: 0,
+              duration: 0.52,
+              ease: 'back.out(2.5)',
+              stagger: 0.048
+            },
+            '-=0.1'
+          );
+        }
+
+        // 3. Line 2 (Primary Navy Statement): Words groove and dance in fast & snappy
+        if (mainWords.length > 0) {
+          danceTl.to(
+            mainWords,
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              rotation: 0,
+              duration: 0.52,
+              ease: 'back.out(2.5)',
+              stagger: 0.038
+            },
+            '-=0.25'
+          );
+        }
+
+        // 4. Action button emerges smoothly
+        danceTl.from('#difference .difference-action', {
+          y: 20,
+          opacity: 0,
+          duration: 0.55,
+          ease: 'power3.out'
+        }, '-=0.15');
       }
 
       // ----------------------------------------------------------------------
@@ -579,6 +700,66 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+
+      // ----------------------------------------------------------------------
+      // 13. Royal Executive Button Hover Interactions (Rolex / Cartier Style)
+      // Stationary Precision: Dual-Layer Rolling Text Flip + Specular Sheen (No Magnetic / No Shadow)
+      // ----------------------------------------------------------------------
+      const initRoyalButtons = () => {
+        const allButtons = document.querySelectorAll('.btn');
+
+        allButtons.forEach(btn => {
+          if (btn.dataset.royalInit === 'true') return;
+          btn.dataset.royalInit = 'true';
+
+          // Extract text content cleanly
+          const text = btn.textContent.trim();
+          if (!text) return;
+
+          // Wrap into luxury rolling text structure & specular light sheen
+          btn.innerHTML = `
+            <span class="btn-royal-content">
+              <span class="btn-rolling-mask">
+                <span class="btn-rolling-inner">
+                  <span class="btn-text-line btn-text-original">${text}</span>
+                  <span class="btn-text-line btn-text-clone" aria-hidden="true">${text}</span>
+                </span>
+              </span>
+            </span>
+            <span class="btn-royal-sheen" aria-hidden="true"></span>
+          `;
+
+          const rollingInner = btn.querySelector('.btn-rolling-inner');
+          const sheen = btn.querySelector('.btn-royal-sheen');
+
+          // Smooth dual-layer rolling flip animation
+          const rollTween = gsap.to(rollingInner, {
+            yPercent: -100,
+            duration: 0.38,
+            ease: 'power3.inOut',
+            paused: true
+          });
+
+          // Desktop & Pointer Hover Triggers (Stationary, Clean & Sharp)
+          btn.addEventListener('mouseenter', () => {
+            rollTween.play();
+
+            // Diagonal specular sheen beam sweeps across like light hitting polished metal
+            if (sheen) {
+              gsap.fromTo(sheen,
+                { x: '-150%', opacity: 1 },
+                { x: '450%', opacity: 1, duration: 0.65, ease: 'power2.out' }
+              );
+            }
+          });
+
+          btn.addEventListener('mouseleave', () => {
+            rollTween.reverse();
+          });
+        });
+      };
+
+      initRoyalButtons();
     });
 
     window.addEventListener('beforeunload', () => {

@@ -235,6 +235,7 @@ button {
    4. Global Button System (Strict 60fps Micro-interactions)
    -------------------------------------------------------------------------- */
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -243,19 +244,18 @@ button {
   font-family: var(--font-primary);
   font-size: var(--text-sm);
   font-weight: var(--fw-semibold);
-  line-height: 1;
+  line-height: 1.25;
   text-align: center;
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
   border: 1px solid transparent;
-  border-radius: 0;
-  transition: transform var(--transition-fast),
-    background-color var(--transition-fast),
-    border-color var(--transition-fast),
-    color var(--transition-fast),
-    box-shadow var(--transition-fast);
-  will-change: transform;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  transition: background-color var(--transition-smooth),
+    border-color var(--transition-smooth),
+    color var(--transition-smooth);
 }
 
 /* Primary Gold Button */
@@ -269,13 +269,10 @@ button {
   background-color: var(--color-accent-gold-hover);
   border-color: var(--color-accent-gold-hover);
   color: var(--color-text-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-btn);
 }
 
 .btn-primary:active {
   background-color: var(--color-accent-gold-active);
-  transform: translateY(0);
 }
 
 /* Outline Gold Button */
@@ -287,14 +284,12 @@ button {
 
 .btn-outline:hover {
   background-color: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
   color: var(--color-text-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-btn);
 }
 
 .btn-outline:active {
   background-color: var(--color-accent-gold-active);
-  transform: translateY(0);
 }
 
 /* Dark Navy Header/Accent Button */
@@ -308,12 +303,92 @@ button {
 .btn-dark:hover {
   background-color: var(--color-header-btn-hover);
   border-color: var(--color-header-btn-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(10, 15, 28, 0.3);
 }
 
 .btn-dark:active {
-  transform: translateY(0);
+  background-color: var(--color-header-btn-hover);
+}
+
+/* White Button Variant */
+.btn-white {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-primary-navy);
+}
+
+.btn-white:hover {
+  background-color: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
+  color: var(--color-primary-navy);
+}
+
+/* Royal Rolling Text & Parallax Wrapper */
+.btn-royal-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.btn-rolling-mask {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.25;
+  vertical-align: middle;
+}
+
+.btn-rolling-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  line-height: 1.25;
+  will-change: transform;
+}
+
+.btn-text-line {
+  display: block;
+  line-height: 1.25;
+  white-space: nowrap;
+  letter-spacing: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.btn-text-clone {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Royal Specular Sheen (Light Reflection Sweep) */
+.btn-royal-sheen {
+  position: absolute;
+  top: -60%;
+  left: 0;
+  width: 35%;
+  height: 220%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.32) 50%,
+    rgba(255, 255, 255, 0) 90%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 /* Button Group Container */

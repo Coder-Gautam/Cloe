@@ -103,7 +103,6 @@
 
 .header-action .btn:hover {
   background-color: #1c2e54;
-  transform: translateY(-1px);
 }
 
 /* Mobile Hamburger Toggle */
