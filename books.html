@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livres — Cloé Caron | Propulsez votre Inc.</title>
+  <meta name="description"
+    content="Découvrez les livres de Cloé Caron : Propulsez votre Inc., Propulsez votre équipe, et Osez vous propulser. Des modèles éprouvés pour la croissance des dirigeants et de leurs organisations.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/Cloe-logo.svg">
+
+  <!-- Core Google Fonts: Archivo (Primary Brand) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet Hierarchy -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <!-- Page-Specific Stylesheet (Books) -->
+  <link rel="stylesheet" href="assets/css/books.css?v=2.0">
+  <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+
+<body class="books-page">
+
+  <!-- =========================================================================
+       SITE HEADER NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Cloé Caron Accueil">
+        <img src="assets/images/logo/Cloe-logo.svg" alt="Cloé Caron Logo" class="site-logo-img" width="78" height="78">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main Navigation -->
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="site-nav-list">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="partnership.html" class="nav-link">Le partenariat</a></li>
+          <li><a href="index.html#cloe-caron" class="nav-link">Cloé Caron</a></li>
+          <li><a href="podcasts.html" class="nav-link">Podcasts</a></li>
+          <li><a href="books.html" class="nav-link active">Réserver le livre</a></li>
+        </ul>
+
+        <div class="header-action">
+          <a href="partnership.html#evaluer" class="btn btn-dark" id="header-cta-btn">Faire évaluer votre capacité</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="site-nav-backdrop" id="site-nav-backdrop" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       GSAP SCROLLSMOOTHER WRAPPER
+       ========================================================================= -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="main-content">
+
+        <!-- =====================================================================
+             SECTION 1: HERO SECTION (#books-hero)
+             Full-width split layout matching Figma Cloé Caron - Books.png
+             ===================================================================== -->
+        <section class="books-hero" id="books-hero" aria-label="Propulsez votre Inc. — Le prochain livre">
+          <div class="books-hero-grid">
+
+            <!-- Left Column: Content aligned with container -->
+            <div class="books-hero-content-col">
+              <div class="books-hero-content">
+                <div class="books-eyebrow eyebrow text-gold">
+                  <span class="books-eyebrow-dash">—</span> LE PROCHAIN LIVRE
+                </div>
+
+                <h1 class="books-hero-title">
+                  Propulsez votre Inc.
+                </h1>
+
+                <div class="books-hero-tag">
+                  LE LIVRE
+                </div>
+
+                <p class="books-hero-desc">
+                  L'équation de la capacité d'entreprise, du diagnostic à la relève. Le<br class="desktop-only"> troisième livre de Cloé Caron.
+                </p>
+
+                <div class="books-hero-parution">
+                  PARUTION — PRINTEMPS SPRING 2027
+                </div>
+
+                <div class="books-hero-actions">
+                  <a href="#reserver" class="btn btn-primary books-btn-primary">
+                    Réservez votre copie du livre
+                  </a>
+                  <a href="partnership.html" class="btn btn-outline books-btn-secondary">
+                    Voir le partenariat
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Full-bleed Neutral Graphic with Cover Placeholder -->
+            <div class="books-hero-media-col">
+              <img src="assets/images/books/banner-img.png" alt="" class="books-hero-media-bg" width="720" height="726" aria-hidden="true">
+              <div class="books-cover-placeholder">
+                <svg class="books-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span class="books-placeholder-text">Couverture à venir</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 2: POURQUOI CE LIVRE (#books-why)
+             ===================================================================== -->
+        <section class="books-why" id="books-why" aria-label="Pourquoi ce livre">
+          <div class="container">
+            <div class="books-why-header">
+              <div class="books-eyebrow eyebrow text-gold">
+                <span class="books-eyebrow-dash">—</span> POURQUOI CE LIVRE
+              </div>
+              <h2 class="books-why-title">
+                Pourquoi les entreprises<br>plafonnent.
+              </h2>
+            </div>
+
+            <div class="books-why-grid">
+              <div class="books-why-col">
+                <p class="books-why-text">
+                  Une entreprise plafonne quand sa complexité dépasse ce que son organisation peut porter. Plus de gens, plus de clients, plus de décisions — et une structure qui suit trop lentement. Au début, le talent compense. Le talent finit par atteindre sa limite.
+                </p>
+              </div>
+              <div class="books-why-col">
+                <p class="books-why-text">
+                  Le livre part de là : ce qui produit vraiment la capacité d'une organisation, comment la mesurer, et comment la bâtir avant d'en avoir besoin.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 3: LES 10 LOIS DE LA CROISSANCE (#books-laws)
+             ===================================================================== -->
+        <section class="books-laws" id="books-laws" aria-label="Les 10 lois de la croissance d'entreprise">
+          <div class="container">
+            <div class="books-laws-header">
+              <div class="books-eyebrow eyebrow text-gold">
+                <span class="books-eyebrow-dash">—</span> CE QU'IL Y A DEDANS
+              </div>
+              <h2 class="books-laws-title">
+                Les 10 lois de la croissance<br>d’entreprise.
+              </h2>
+              <p class="books-laws-subtitle">
+                Toute organisation obéit à deux séries de lois. Les premières sont visibles : la comptabilité, le droit corporatif, la fiscalité. Les secondes s’écrivent nulle part, et ce sont elles qui déterminent si une entreprise grandira, stagnera ou reculera.
+              </p>
+            </div>
+
+            <!-- 10 Pointers Grid (Alternating rows: 01-02, 03-04, 05-06, 07-08, 09-10) -->
+            <div class="books-laws-grid">
+              <div class="books-law-item">
+                <span class="books-law-num">01</span>
+                <p class="books-law-text">Toute organisation est parfaitement conçue pour produire les résultats qu'elle produit.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">02</span>
+                <p class="books-law-text">La complexité grandit toujours plus vite que la structure.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">03</span>
+                <p class="books-law-text">La qualité des décisions s'accumule, comme des intérêts.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">04</span>
+                <p class="books-law-text">La capacité organisationnelle précède la performance financière.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">05</span>
+                <p class="books-law-text">La dépendance au fondateur augmente en silence.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">06</span>
+                <p class="books-law-text">Le leadership existe pour augmenter la capacité de l'organisation.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">07</span>
+                <p class="books-law-text">La gouvernance protège demain pendant que les opérations livrent aujourd'hui.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">08</span>
+                <p class="books-law-text">La culture est le système d’exploitation de l’exécution.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">09</span>
+                <p class="books-law-text">Une organisation croît à la vitesse de la confiance.</p>
+              </div>
+
+              <div class="books-law-item">
+                <span class="books-law-num">10</span>
+                <p class="books-law-text">La valeur d’une entreprise se bâtit bien avant d’être mesurée.</p>
+              </div>
+            </div>
+
+            <!-- Bottom Action Buttons -->
+            <div class="books-laws-actions">
+              <a href="partnership.html#evaluer" class="btn btn-primary">
+                Faire évaluer votre capacité de croissance
+              </a>
+              <a href="#reserver" class="btn btn-outline">
+                Réservez votre copie du livre
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 4: TROIS LIVRES, TROIS MODÈLES (#books-models)
+             ===================================================================== -->
+        <section class="books-models" id="books-models" aria-label="Trois livres, trois modèles">
+          <div class="container">
+            <!-- Section Header (Centered) -->
+            <div class="books-models-header">
+              <div class="books-eyebrow eyebrow text-gold">
+                <span class="books-eyebrow-dash">—</span> TROIS LIVRES, TROIS MODÈLES
+              </div>
+              <h2 class="books-models-title">
+                Cloé a écrit sur la personne, puis sur<br>l'équipe, maintenant sur l'entreprise.
+              </h2>
+              <p class="books-models-subtitle">
+                Trois modèles distincts, à trois échelles. Chacun répond à la question de son niveau.
+              </p>
+            </div>
+
+            <!-- 3 Books Cards Grid -->
+            <div class="books-cards-grid">
+
+              <!-- Card 1: Osez vous propulser -->
+              <article class="books-model-card">
+                <div class="books-card-top-badge">
+                  PARU
+                </div>
+                <div class="books-card-badge-wrap">
+                  <img src="assets/images/books/5cles.png" alt="5 Clés La Personne" class="books-card-badge-img" width="132" height="132" loading="lazy">
+                </div>
+                <div class="books-card-divider" aria-hidden="true"></div>
+                <div class="books-card-body">
+                  <div class="books-card-scale">
+                    ÉCHELLE 01 — L'INDIVIDU
+                  </div>
+                  <h3 class="books-card-title">
+                    Osez vous propulser
+                  </h3>
+                  <div class="books-card-meta">
+                    2023 · Le modèle des 5 Clés
+                  </div>
+                  <p class="books-card-desc">
+                    Le premier frein est dans la tête de celui ou celle qui dirige. Lever ses propres freins avant ceux de l'organisation.
+                  </p>
+                  <div class="books-card-footer">
+                    <img src="assets/images/books/book-osez.png" alt="Livre Osez vous propulser" class="books-card-thumb" width="58" height="58" loading="lazy">
+                    <a href="#procurer-1" class="btn books-card-btn">
+                      Se procurer le livre &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2: Propulsez votre équipe -->
+              <article class="books-model-card">
+                <div class="books-card-top-badge">
+                  PARU
+                </div>
+                <div class="books-card-badge-wrap">
+                  <img src="assets/images/books/5cles.png" alt="5 Clés La Personne" class="books-card-badge-img" width="132" height="132" loading="lazy">
+                </div>
+                <div class="books-card-divider" aria-hidden="true"></div>
+                <div class="books-card-body">
+                  <div class="books-card-scale">
+                    ÉCHELLE 02 — L'ÉQUIPE
+                  </div>
+                  <h3 class="books-card-title">
+                    Propulsez votre équipe
+                  </h3>
+                  <div class="books-card-meta">
+                    2020 · Éditions Carte blanche · Le modèle 5C
+                  </div>
+                  <p class="books-card-desc">
+                    Une entreprise grandit à la vitesse de son équipe de direction. Faire de vos gestionnaires une véritable équipe.
+                  </p>
+                  <div class="books-card-footer">
+                    <img src="assets/images/books/book-propulsez.png" alt="Livre Propulsez votre équipe" class="books-card-thumb" width="58" height="58" loading="lazy">
+                    <a href="#procurer-2" class="btn books-card-btn">
+                      Se procurer le livre &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3: Propulsez votre Inc. -->
+              <article class="books-model-card">
+                <div class="books-card-top-badge">
+                  À PARAÎTRE — PRINTEMPS 2027
+                </div>
+                <div class="books-card-badge-wrap">
+                  <img src="assets/images/books/5p.png" alt="5P L'Entreprise" class="books-card-badge-img" width="132" height="132" loading="lazy">
+                </div>
+                <div class="books-card-divider" aria-hidden="true"></div>
+                <div class="books-card-body">
+                  <div class="books-card-scale">
+                    ÉCHELLE 03 — L'ENTREPRISE
+                  </div>
+                  <h3 class="books-card-title">
+                    Propulsez votre Inc.
+                  </h3>
+                  <div class="books-card-meta">
+                    Le livre · Le modèle 5P™
+                  </div>
+                  <p class="books-card-desc">
+                    La capacité d’une organisation à créer de la valeur par elle-même. Le troisième livre, celui qui passe de la personne et de l’équipe à l’entreprise entière.
+                  </p>
+                  <div class="books-card-footer">
+                    <img src="assets/images/books/book-propulsez.png" alt="Livre Propulsez votre Inc." class="books-card-thumb" width="58" height="58" loading="lazy">
+                    <a href="#reserver" class="btn books-card-btn books-card-btn-reserve">
+                      Réservez votre copie du livre
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Bottom Note Below Cards -->
+            <p class="books-models-bottom-note">
+              LES DEUX PREMIERS — BEST-SELLERS AU QUÉBEC · POINT DE VENTE À CONFIRMER
+            </p>
+          </div>
+        </section>
+
+        <!-- =======================================================================
+             SECTION 5: TESTIMONIALS SLIDER / CAROUSEL
+             ======================================================================= -->
+        <section class="books-testimonials" id="books-testimonials" aria-label="Ce qu'ils ont dit des livres de Cloé">
+          <div class="books-testimonials-header">
+            <span class="books-testimonials-eyebrow">CE QU'ILS ONT DIT DES LIVRES DE CLOÉ</span>
+          </div>
+
+          <div class="books-testimonials-carousel" id="books-testimonials-carousel">
+            <div class="books-testimonials-track" id="books-testimonials-track">
+
+              <!-- Slide 0: Left peeking slide (faded) -->
+              <article class="books-testimonial-slide" data-slide="0">
+                <div class="books-testimonial-card-inner">
+                  <div class="books-testimonial-card-eyebrow">ONE TEAM</div>
+                  <p class="books-testimonial-quote">
+                    « Ce guide permet d’apprendre à se connaître, à demander de l’aide et du feedback. Tout gestionnaire conscient de l’influence qu’il a tirera profit des conseils que Cloé partage dans son livre. »
+                  </p>
+                  <div class="books-testimonial-author-wrap">
+                    <div class="books-testimonial-avatar-wrap">
+                      <img src="assets/images/home-assets/Patricia-Gauthier.png" alt="Patricia Gauthier"
+                        class="books-testimonial-avatar-img" width="57" height="57" loading="lazy">
+                    </div>
+                    <div class="books-testimonial-author-info">
+                      <h3 class="books-testimonial-author-name">Patricia Gauthier</h3>
+                      <span class="books-testimonial-author-role">PDG, Moderna</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 1: Center active slide (Manon Brouillette) -->
+              <article class="books-testimonial-slide is-active" data-slide="1">
+                <div class="books-testimonial-card-inner">
+                  <p class="books-testimonial-quote">
+                    « Je recommande fortement ce guide à tous les leaders. À travers une multitude d’exemples vécus, Cloé nous fait réaliser l’impact de notre posture sur notre équipe. Elle nous démontre la puissance de son modèle. »
+                  </p>
+                  <div class="books-testimonial-author-wrap">
+                    <div class="books-testimonial-avatar-wrap">
+                      <img src="assets/images/home-assets/Sylvain-Corbeil.png" alt="Manon Brouillette"
+                        class="books-testimonial-avatar-img" width="57" height="57" loading="lazy">
+                    </div>
+                    <div class="books-testimonial-author-info">
+                      <h3 class="books-testimonial-author-name">Manon Brouillette</h3>
+                      <span class="books-testimonial-author-role">Ex-présidente de Vidéotron, administratrice de sociétés</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 2: Right peeking slide (Grégoire Baillargeon) -->
+              <article class="books-testimonial-slide" data-slide="2">
+                <div class="books-testimonial-card-inner">
+                  <p class="books-testimonial-quote">
+                    « On ne peut pas changer qui on est, mais on peut se développer. Dans son livre, Cloé nous guide pour y arriver et augmenter l’efficacité de nos équipes. »
+                  </p>
+                  <div class="books-testimonial-author-wrap">
+                    <div class="books-testimonial-avatar-wrap">
+                      <img src="assets/images/home-assets/Samba-Sow.png" alt="Grégoire Baillargeon"
+                        class="books-testimonial-avatar-img" width="57" height="57" loading="lazy">
+                    </div>
+                    <div class="books-testimonial-author-info">
+                      <h3 class="books-testimonial-author-name">Grégoire Baillargeon</h3>
+                      <span class="books-testimonial-author-role">BMO</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Slide 3: Sylvain Corbeil -->
+              <article class="books-testimonial-slide" data-slide="3">
+                <div class="books-testimonial-card-inner">
+                  <div class="books-testimonial-card-eyebrow">COMITÉ DE DIRECTION</div>
+                  <p class="books-testimonial-quote">
+                    « Cloé a une approche très structurée mais également très flexible ; cette structure nous a permis d’avoir des dialogues vraiment pertinents et percutants pour progresser en équipe et faire front commun. »
+                  </p>
+                  <div class="books-testimonial-author-wrap">
+                    <div class="books-testimonial-avatar-wrap">
+                      <img src="assets/images/home-assets/Sylvain-Corbeil.png" alt="Sylvain Corbeil"
+                        class="books-testimonial-avatar-img" width="57" height="57" loading="lazy">
+                    </div>
+                    <div class="books-testimonial-author-info">
+                      <h3 class="books-testimonial-author-name">Sylvain Corbeil</h3>
+                      <span class="books-testimonial-author-role">Premier vice-président, services aux entreprises — Québec et Atlantique, TD</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =======================================================================
+             SECTION 6: FINAL CTA BANNER (Les livres expliquent. Le mandat, lui...)
+             ======================================================================= -->
+        <section class="books-cta-banner" id="books-cta" aria-label="Évaluation de votre capacité de croissance">
+          <div class="container">
+            <div class="books-cta-content">
+              <h2 class="books-cta-title">
+                Les livres expliquent. Le mandat, lui,<br>
+                change quelque chose.
+              </h2>
+              <div class="books-cta-action">
+                <a href="partnership.html#evaluation" class="btn books-cta-btn">
+                  Faire évaluer votre capacité de croissance
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- =======================================================================
+           SITE FOOTER (Globally Unified Across All Pages)
+           ======================================================================= -->
+      <footer class="site-footer" id="site-footer">
+        <div class="container">
+          <div class="footer-main-grid">
+
+            <!-- Column 1: Brand & Bio -->
+            <div class="footer-brand-col">
+              <a href="index.html" class="footer-logo" aria-label="Cloé Caron Accueil">
+                <img src="assets/images/logo/Cloe-logo.svg" alt="Cloé Caron" width="72" height="72"
+                  class="footer-logo-img">
+              </a>
+              <p class="footer-brand-desc">
+                Cloé Caron accompagne les<br>
+                dirigeants à bâtir une entreprise qui<br>
+                grandit sans eux.
+              </p>
+            </div>
+
+            <!-- Column 2: Navigation -->
+            <div class="footer-nav-col">
+              <h3 class="footer-col-title">NAVIGATION</h3>
+              <ul class="footer-links-list">
+                <li>
+                  <a href="index.html" class="footer-link">
+                    <span class="footer-bullet">•</span> Accueil
+                  </a>
+                </li>
+                <li>
+                  <a href="partnership.html" class="footer-link">
+                    <span class="footer-bullet">•</span> Le partenariat
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html#cloe-caron" class="footer-link">
+                    <span class="footer-bullet">•</span> Cloé Caron
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 3: Contenu -->
+            <div class="footer-content-col">
+              <h3 class="footer-col-title">CONTENU</h3>
+              <ul class="footer-links-list">
+                <li>
+                  <a href="podcasts.html" class="footer-link">
+                    <span class="footer-bullet">•</span> Podcast — Confessions de Leaders
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="footer-link">
+                    <span class="footer-bullet">•</span> Chaîne YouTube
+                  </a>
+                </li>
+                <li>
+                  <a href="books.html" class="footer-link active">
+                    <span class="footer-bullet">•</span> Lancement du prochain livre
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sub-Footer Bottom Bar -->
+          <div class="footer-bottom-row">
+            <p class="footer-copyright">
+              © 2026 O2 Coaching — Cloé Caron
+            </p>
+            <span class="footer-direction">
+              Maquette — direction 2a
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCRIPTS (GSAP Local Suite: Core + ScrollTrigger + ScrollSmoother + Draggable + ScrollToPlugin)
+       ========================================================================= -->
+  <script src="assets/gsap-public/minified/gsap.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollTrigger.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollSmoother.min.js"></script>
+  <script src="assets/gsap-public/minified/Draggable.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

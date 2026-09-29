@@ -1369,6 +1369,330 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+
+      // ----------------------------------------------------------------------
+      // 23. Books Page: Hero Section Entrance Animation
+      // ----------------------------------------------------------------------
+      const booksHero = document.getElementById('books-hero');
+      if (booksHero) {
+        const booksHeroTl = gsap.timeline({
+          defaults: { ease: 'power3.out', duration: 0.9 }
+        });
+
+        booksHeroTl
+          .from('#books-hero .books-eyebrow', { y: 20, opacity: 0, duration: 0.7, delay: 0.15 })
+          .from('#books-hero .books-hero-title', { y: 35, opacity: 0, duration: 0.9 }, '-=0.5')
+          .from('#books-hero .books-hero-tag', { y: 15, opacity: 0, duration: 0.6 }, '-=0.6')
+          .from('#books-hero .books-hero-desc', { y: 25, opacity: 0, duration: 0.8 }, '-=0.5')
+          .from('#books-hero .books-hero-parution', { y: 20, opacity: 0, duration: 0.7 }, '-=0.5')
+          .from('#books-hero .books-hero-actions', { y: 20, opacity: 0, duration: 0.65 }, '-=0.4')
+          .from('#books-hero .books-hero-media-col', { y: 30, opacity: 0, duration: 0.95 }, '-=0.6');
+      }
+
+      // ----------------------------------------------------------------------
+      // 24. Books Page: Infinite Seamless Testimonials Carousel Slider with GSAP
+      // ----------------------------------------------------------------------
+      const testimonialsTrack = document.getElementById('books-testimonials-track');
+      const testimonialsCarousel = document.getElementById('books-testimonials-carousel');
+      const testimonialsSection = document.getElementById('books-testimonials');
+
+      if (testimonialsTrack && testimonialsCarousel) {
+        const originalSlides = Array.from(testimonialsTrack.querySelectorAll('.books-testimonial-slide'));
+        const numOriginals = originalSlides.length;
+
+        // Clone sets before and after for true infinite seamless circular looping
+        if (numOriginals > 1) {
+          // Prepend set of clones
+          const beforeClones = originalSlides.map(slide => {
+            const clone = slide.cloneNode(true);
+            clone.classList.remove('is-active');
+            clone.classList.add('is-clone');
+            return clone;
+          });
+          beforeClones.reverse().forEach(clone => {
+            testimonialsTrack.insertBefore(clone, testimonialsTrack.firstChild);
+          });
+
+          // Append set of clones
+          originalSlides.forEach(slide => {
+            const clone = slide.cloneNode(true);
+            clone.classList.remove('is-active');
+            clone.classList.add('is-clone');
+            testimonialsTrack.appendChild(clone);
+          });
+        }
+
+        const slides = Array.from(testimonialsTrack.querySelectorAll('.books-testimonial-slide'));
+        const totalSlides = slides.length;
+
+        // Start in the middle set on Manon Brouillette (original index 1 => index 4 + 1 = 5)
+        let currentIndex = numOriginals > 1 ? numOriginals + 1 : 0;
+        let isDragging = false;
+        let isAnimating = false;
+        let isHovered = false;
+        let autoSlideTimer = null;
+        const AUTO_SLIDE_INTERVAL = 4500; // 4.5 seconds per slide
+
+        const updateSlideStates = (index, animate = true) => {
+          slides.forEach((slide, idx) => {
+            const isActive = idx === index;
+            slide.classList.toggle('is-active', isActive);
+            slide.setAttribute('aria-hidden', !isActive);
+
+            if (animate) {
+              gsap.to(slide, {
+                opacity: isActive ? 1 : 0.35,
+                duration: 0.45,
+                ease: 'power2.out',
+                overwrite: 'auto'
+              });
+            } else {
+              gsap.set(slide, {
+                opacity: isActive ? 1 : 0.35
+              });
+            }
+          });
+        };
+
+        const getTargetX = (index) => {
+          const targetSlide = slides[index];
+          if (!targetSlide) return 0;
+          const carouselWidth = testimonialsCarousel.offsetWidth;
+          const slideWidth = targetSlide.offsetWidth;
+          const slideLeft = targetSlide.offsetLeft;
+          return (carouselWidth / 2) - (slideLeft + (slideWidth / 2));
+        };
+
+        const goToSlide = (index, duration = 0.85, ease = 'power2.out', onDone) => {
+          currentIndex = index;
+          const targetX = getTargetX(currentIndex);
+          isAnimating = true;
+
+          gsap.to(testimonialsTrack, {
+            x: targetX,
+            duration: duration,
+            ease: ease,
+            overwrite: 'auto',
+            onComplete: () => {
+              isAnimating = false;
+
+              // Seamless infinite wrap check:
+              // When moving forward into after-clones set (>= 2 * numOriginals), seamlessly wrap back to middle set
+              if (numOriginals > 1 && currentIndex >= numOriginals * 2) {
+                currentIndex -= numOriginals;
+                const wrappedX = getTargetX(currentIndex);
+                gsap.set(testimonialsTrack, { x: wrappedX });
+                updateSlideStates(currentIndex, false);
+              } else if (numOriginals > 1 && currentIndex < numOriginals) {
+                // When moving backward into before-clones set (< numOriginals), seamlessly wrap to middle set
+                currentIndex += numOriginals;
+                const wrappedX = getTargetX(currentIndex);
+                gsap.set(testimonialsTrack, { x: wrappedX });
+                updateSlideStates(currentIndex, false);
+              }
+
+              if (onDone) onDone();
+            }
+          });
+
+          updateSlideStates(currentIndex, true);
+        };
+
+        // Auto-Slide Management
+        const startAutoSlide = () => {
+          stopAutoSlide();
+          if (isHovered || isDragging) return;
+
+          autoSlideTimer = setTimeout(() => {
+            if (!isHovered && !isDragging) {
+              goToSlide(currentIndex + 1, 0.85, 'power2.out', () => {
+                startAutoSlide();
+              });
+            }
+          }, AUTO_SLIDE_INTERVAL);
+        };
+
+        const stopAutoSlide = () => {
+          if (autoSlideTimer) {
+            clearTimeout(autoSlideTimer);
+            autoSlideTimer = null;
+          }
+        };
+
+        // Hover handling: Pause when cursor is over the slider, resume when cursor leaves
+        const hoverTargets = [testimonialsCarousel, testimonialsSection].filter(Boolean);
+        hoverTargets.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            isHovered = true;
+            stopAutoSlide();
+          });
+
+          el.addEventListener('mouseleave', () => {
+            isHovered = false;
+            startAutoSlide();
+          });
+        });
+
+        // Touch handling
+        testimonialsCarousel.addEventListener('touchstart', () => {
+          stopAutoSlide();
+        }, { passive: true });
+
+        testimonialsCarousel.addEventListener('touchend', () => {
+          setTimeout(() => {
+            if (!isHovered) startAutoSlide();
+          }, 800);
+        }, { passive: true });
+
+        // Tab visibility
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            stopAutoSlide();
+          } else if (!isHovered) {
+            startAutoSlide();
+          }
+        });
+
+        // Click on non-active slide to slide to it
+        slides.forEach((slide, idx) => {
+          slide.addEventListener('click', () => {
+            if (!isDragging && idx !== currentIndex) {
+              stopAutoSlide();
+              goToSlide(idx, 0.75, 'power2.out', () => {
+                if (!isHovered) startAutoSlide();
+              });
+            }
+          });
+        });
+
+        // Keyboard arrow navigation
+        testimonialsCarousel.setAttribute('tabindex', '0');
+        testimonialsCarousel.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            stopAutoSlide();
+            goToSlide(currentIndex - 1, 0.75, 'power2.out', () => {
+              if (!isHovered) startAutoSlide();
+            });
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            stopAutoSlide();
+            goToSlide(currentIndex + 1, 0.75, 'power2.out', () => {
+              if (!isHovered) startAutoSlide();
+            });
+          }
+        });
+
+        // Touch & GSAP Draggable Support
+        if (typeof Draggable !== 'undefined') {
+          gsap.registerPlugin(Draggable);
+          let startX = 0;
+
+          Draggable.create(testimonialsTrack, {
+            type: 'x',
+            edgeResistance: 0.8,
+            cursor: 'grab',
+            activeCursor: 'grabbing',
+            onPress: function () {
+              startX = this.x;
+              isDragging = false;
+              stopAutoSlide();
+            },
+            onDrag: function () {
+              if (Math.abs(this.x - startX) > 6) {
+                isDragging = true;
+              }
+            },
+            onDragEnd: function () {
+              const currentX = this.x;
+              setTimeout(() => { isDragging = false; }, 60);
+
+              // Find closest slide to center
+              let closestIndex = currentIndex;
+              let closestDist = Infinity;
+              slides.forEach((_, idx) => {
+                const tx = getTargetX(idx);
+                const dist = Math.abs(currentX - tx);
+                if (dist < closestDist) {
+                  closestDist = dist;
+                  closestIndex = idx;
+                }
+              });
+
+              // Directional drag intent
+              const deltaX = this.x - startX;
+              if (deltaX < -50 && closestIndex === currentIndex) {
+                closestIndex = currentIndex + 1;
+              } else if (deltaX > 50 && closestIndex === currentIndex) {
+                closestIndex = currentIndex - 1;
+              }
+
+              goToSlide(closestIndex, 0.65, 'power2.out', () => {
+                if (!isHovered) startAutoSlide();
+              });
+            }
+          });
+        }
+
+        // Initialize positioning immediately and on window resize
+        const initPosition = () => {
+          const targetX = getTargetX(currentIndex);
+          gsap.set(testimonialsTrack, { x: targetX });
+          updateSlideStates(currentIndex, false);
+          if (!isHovered) {
+            startAutoSlide();
+          }
+        };
+
+        requestAnimationFrame(initPosition);
+
+        window.addEventListener('resize', () => {
+          const targetX = getTargetX(currentIndex);
+          gsap.set(testimonialsTrack, { x: targetX });
+        });
+
+        // ScrollTrigger to pause auto-slide when scrolled out of view
+        ScrollTrigger.create({
+          trigger: '#books-testimonials',
+          start: 'top 95%',
+          end: 'bottom 5%',
+          onEnter: () => { if (!isHovered) startAutoSlide(); },
+          onLeave: () => { stopAutoSlide(); },
+          onEnterBack: () => { if (!isHovered) startAutoSlide(); },
+          onLeaveBack: () => { stopAutoSlide(); }
+        });
+
+        // Entrance scroll animation
+        gsap.from('#books-testimonials .books-testimonials-eyebrow', {
+          y: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#books-testimonials',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+
+      // ----------------------------------------------------------------------
+      // 25. Books Page: CTA Section Entrance Animation
+      // ----------------------------------------------------------------------
+      const booksCta = document.getElementById('books-cta');
+      if (booksCta) {
+        gsap.from('#books-cta .books-cta-content', {
+          y: 30,
+          opacity: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#books-cta',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
     });
 
     window.addEventListener('beforeunload', () => {

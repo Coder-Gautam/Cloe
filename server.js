@@ -17,7 +17,7 @@ const mime = {
 
 const server = http.createServer((req, res) => {
   let reqPath = req.url === '/' ? '/index.html' : req.url;
-  let fullPath = path.join(__dirname, reqPath.split('?')[0]);
+  let fullPath = path.join(__dirname, decodeURIComponent(reqPath.split('?')[0]));
 
   if (!fs.existsSync(fullPath) || fs.statSync(fullPath).isDirectory()) {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
