@@ -636,6 +636,7 @@
   padding: 0;
   position: relative;
   z-index: 5;
+  top: 70px;
 }
 
 .wheel-container-full {
