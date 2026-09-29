@@ -15,6 +15,7 @@
 
 /* Page Styles */
 @import url('home.css');
+@import url('podcasts.css');
 
 /* Global Footer */
 @import url('footer.css');

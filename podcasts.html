@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Confessions de Leaders — Le podcast animé par Cloé Caron et Thomas Corbo. Des dirigeants et visionnaires de l'économie se confient sur ce que ça prend pour accomplir de grandes choses.">
+  <title>Podcasts — Confessions de Leaders | Cloé Caron</title>
+
+  <!-- Google Fonts Preconnect & Archivo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Global Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <!-- Page-Specific Stylesheet (Podcasts) -->
+  <link rel="stylesheet" href="assets/css/podcasts.css?v=2.8">
+  <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+
+<body class="podcast-page">
+
+  <!-- =========================================================================
+       SITE HEADER NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Cloé Caron Accueil">
+        <img src="assets/images/logo/Cloe-logo.svg" alt="Cloé Caron Logo" class="site-logo-img" width="78" height="78">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main Navigation -->
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="site-nav-list">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="partnership.html" class="nav-link">Le partenariat</a></li>
+          <li><a href="index.html#cloe-caron" class="nav-link">Cloé Caron</a></li>
+          <li><a href="podcasts.html" class="nav-link active">Podcasts</a></li>
+          <li><a href="index.html#livre" class="nav-link">Réserver le livre</a></li>
+        </ul>
+
+        <div class="header-action">
+          <a href="partnership.html#evaluer" class="btn btn-dark" id="header-cta-btn">Faire évaluer votre capacité</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="site-nav-backdrop" id="site-nav-backdrop" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       GSAP SCROLLSMOOTHER WRAPPER
+       ========================================================================= -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main id="main-content">
+
+        <!-- =====================================================================
+             SECTION 1: PODCAST HERO (#podcast-hero)
+             ===================================================================== -->
+        <section class="podcast-hero" id="podcast-hero" aria-label="Confessions de Leaders — Saison 6">
+          <div class="podcast-hero-grid">
+
+            <!-- Left Column: Content aligned with container -->
+            <div class="podcast-hero-content-col">
+              <div class="podcast-hero-content">
+                <div class="podcast-eyebrow">
+                  <span class="podcast-eyebrow-dash">—</span> SEASON 6
+                </div>
+
+                <h1 class="podcast-hero-title">
+                  Hosted by Cloé and Thomas, starting September 2026
+                </h1>
+
+                <p class="podcast-hero-desc">
+                  Des dirigeants, des visionnaires de l'économie se confient sur ce que ça prend pour accomplir de grandes choses. Un mot qui vient en tête pour la saison 2026 : audace. Moments émotifs, conseils pratiques pour entrepreneurs, exclusivités sur les visionnaires qui ont et qui continueront de bâtir le Québec - c'est ce qui vous attend sur Confessions de Leaders.
+                </p>
+
+                <!-- Platform Badges Row -->
+                <div class="podcast-platforms-row">
+                  <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="podcast-platform-badge" aria-label="Écouter sur YouTube">
+                    <img src="assets/images/podcast/social-icons/YT.png" alt="YouTube" class="platform-icon icon-yt" width="26" height="19">
+                    <span>YOUTUBE</span>
+                  </a>
+                  <a href="https://open.spotify.com" target="_blank" rel="noopener" class="podcast-platform-badge" aria-label="Écouter sur Spotify">
+                    <img src="assets/images/podcast/social-icons/spotify.png" alt="Spotify" class="platform-icon" width="22" height="22">
+                    <span>SPOTIFY</span>
+                  </a>
+                  <a href="https://podcasts.apple.com" target="_blank" rel="noopener" class="podcast-platform-badge" aria-label="Écouter sur Apple Podcasts">
+                    <img src="assets/images/podcast/social-icons/apple-podcasts.png" alt="Apple Podcasts" class="platform-icon" width="22" height="22">
+                    <span>APPLE PODCASTS</span>
+                  </a>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="partnership.html" class="btn podcast-hero-btn">
+                  Découvrir Propulsez votre Inc.
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Studio Photo Cloé & Thomas (Full bleed to right edge) -->
+            <div class="podcast-hero-media-col">
+              <div class="podcast-hero-img-wrap">
+                <img src="assets/images/podcast/hero-banner-img.png"
+                  alt="Cloé Caron et Thomas Corbo en studio d'enregistrement de podcast"
+                  class="podcast-hero-img"
+                  width="1080"
+                  height="1190"
+                  loading="eager">
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 2: ANNOUNCEMENT TICKER STRIP (#podcast-strip)
+             ===================================================================== -->
+        <section class="podcast-strip" id="podcast-strip" aria-label="Annonce Saison 6">
+          <div class="container">
+            <div class="podcast-strip-inner">
+              <div class="podcast-strip-left">
+                <span class="strip-eyebrow">NOUVELLE FORMULE</span>
+                <p class="strip-title">
+                  <span class="strip-title-gold">Saison 6 —</span> avec Cloé Caron et Thomas Corbo, dès septembre 2026.
+                </p>
+              </div>
+              <a href="#podcast-cta" class="podcast-strip-cta">
+                <span>ÊTRE PRÉVENU</span> <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 3: POURQUOI MAINTENANT (#podcast-why)
+             ===================================================================== -->
+        <section class="podcast-why" id="podcast-why" aria-label="Pourquoi maintenant">
+          <div class="container">
+            <div class="podcast-why-grid">
+
+              <!-- Left Column: Cloé Photo in LOVE sweatshirt -->
+              <div class="podcast-why-media">
+                <img src="assets/images/podcast/2nd-section-img.png"
+                  alt="Cloé Caron avec son chandail LOVE"
+                  class="podcast-why-img"
+                  width="935"
+                  height="690"
+                  loading="lazy">
+              </div>
+
+              <!-- Right Column: Content -->
+              <div class="podcast-why-content">
+                <div class="podcast-eyebrow">
+                  <span class="podcast-eyebrow-dash">—</span> POURQUOI MAINTENANT
+                </div>
+
+                <h2 class="podcast-section-title">
+                  300 G$ d'entreprises changeront de mains d'ici cinq ans.
+                </h2>
+
+                <p class="podcast-why-desc">
+                  C'est le plus grand transfert de propriété que le Québec inc. aura connu. Derrière chaque transaction, quelqu'un prend la suite et doit apprendre vite.
+                </p>
+
+                <p class="podcast-why-desc">
+                  Confessions de Leaders existe pour ça : rendre transmissible ce que les dirigeants d'ici ont mis 25 ans à comprendre, pour que la prochaine génération soit prête à prendre le flambeau.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 4: LES ANIMATEURS (#podcast-hosts)
+             ===================================================================== -->
+        <section class="podcast-hosts" id="podcast-hosts" aria-label="Les animateurs">
+          <div class="container">
+            <div class="podcast-hosts-grid">
+
+              <!-- Left Column: Content -->
+              <div class="podcast-hosts-content">
+                <div class="podcast-eyebrow">
+                  <span class="podcast-eyebrow-dash">—</span> LES ANIMATEURS
+                </div>
+
+                <h2 class="podcast-section-title">
+                  Une entrepreneure et sa relève, aux deux bouts de la même table.
+                </h2>
+
+                <p class="podcast-hosts-desc">
+                  Cloé Caron dirige o2Coaching depuis 25 ans. Thomas Corbo, son fils, arrive dans le métier. Le passage de flambeau dont nos invités viennent parler, il se joue à l'écran pendant qu'on en discute.
+                </p>
+
+                <div class="podcast-hosts-meta">
+                  MÈRE ET FILS · COANIMATION DEPUIS 2026
+                </div>
+              </div>
+
+              <!-- Right Column: Cloé Photo holding book -->
+              <div class="podcast-hosts-media">
+                <img src="assets/images/podcast/3rd-section-img.png"
+                  alt="Cloé Caron tenant son livre Empower Your Team"
+                  class="podcast-hosts-img"
+                  width="935"
+                  height="690"
+                  loading="lazy">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 5: L'ARCHIVE & STATS GRID (#podcast-archive)
+             ===================================================================== -->
+        <section class="podcast-archive" id="podcast-archive" aria-label="L'archive et chiffres clés">
+          <div class="container">
+
+            <div class="podcast-archive-header">
+              <div class="podcast-eyebrow">
+                <span class="podcast-eyebrow-dash">—</span> L'ARCHIVE
+              </div>
+
+              <h2 class="podcast-section-title">
+                5 saisons déjà en ligne. La 6e arrive en septembre.
+              </h2>
+
+              <p class="podcast-archive-desc">
+                Les 5 premières saisons s'écoutent intégralement. Qui nous écoute : des dirigeants, des entrepreneurs et des leaders d'organisations.
+              </p>
+            </div>
+
+            <!-- 6 Key Statistics Grid -->
+            <div class="podcast-stats-grid">
+              <div class="podcast-stat-card">
+                <div class="podcast-stat-number" data-target="5">5</div>
+                <div class="podcast-stat-label">SAISONS EN LIGNE</div>
+              </div>
+
+              <div class="podcast-stat-card">
+                <div class="podcast-stat-number" data-target="2020">2020</div>
+                <div class="podcast-stat-label">DEPUIS</div>
+              </div>
+
+              <div class="podcast-stat-card">
+                <div class="podcast-stat-number" data-target="28">28</div>
+                <div class="podcast-stat-label">ÉPISODES</div>
+              </div>
+
+              <div class="podcast-stat-card">
+                <div class="podcast-stat-number" data-target="10000" data-format="space">10 000</div>
+                <div class="podcast-stat-label">VUES PAR ÉPISODE</div>
+              </div>
+
+              <div class="podcast-stat-card">
+                <div class="podcast-stat-number" data-target="15000" data-format="space">15 000</div>
+                <div class="podcast-stat-label">ABONNÉS À L'ÉCOSYSTÈME</div>
+              </div>
+
+              <div class="podcast-stat-card">
+                <div class="podcast-stat-number" data-target="74" data-suffix=" %">74 %</div>
+                <div class="podcast-stat-label">ONT 35 ANS ET PLUS</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 6: UN ÉPISODE — DARK SHOWCASE (#podcast-episode)
+             ===================================================================== -->
+        <section class="podcast-episode" id="podcast-episode" aria-label="Structure d'un épisode">
+          <div class="container">
+            <div class="podcast-episode-grid">
+
+              <!-- Left Column: Text & Chapters List -->
+              <div class="podcast-episode-content">
+                <div class="podcast-eyebrow">
+                  <span class="podcast-eyebrow-dash">—</span> UN ÉPISODE
+                </div>
+
+                <h2 class="podcast-episode-title">
+                  Des gens qui dirigent, qui racontent la partie difficile.
+                </h2>
+
+                <p class="podcast-episode-desc">
+                  Chaque épisode, un dirigeant ou un expert vient parler d'un moment où son entreprise a changé. On prend le temps qu'il faut.
+                </p>
+
+                <div class="podcast-episode-meta">
+                  COANIMÉ PAR CLOÉ CARON ET THOMAS CORBO · 60 À 90 MIN · YOUTUBE, SPOTIFY, APPLE PODCASTS
+                </div>
+
+                <!-- Themes / Chapters Dividers -->
+                <ul class="podcast-chapters-list">
+                  <li class="podcast-chapter-item">
+                    <span>Les origines</span>
+                  </li>
+                  <li class="podcast-chapter-item">
+                    <span>Audace</span>
+                  </li>
+                  <li class="podcast-chapter-item">
+                    <span>La clé dans la porte</span>
+                  </li>
+                  <li class="podcast-chapter-item">
+                    <span>Le mentor</span>
+                  </li>
+                  <li class="podcast-chapter-item">
+                    <span>Le renversement</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right Column: Cloé in Leather Jacket Photo -->
+              <div class="podcast-episode-media">
+                <div class="podcast-episode-img-wrap">
+                  <img src="assets/images/podcast/5th-section-img.png"
+                    alt="Cloé Caron souriante en veste de cuir noire"
+                    class="podcast-episode-img"
+                    width="774"
+                    height="1038"
+                    loading="lazy">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 7: LA CHAÎNE — YOUTUBE GRID (#podcast-channel)
+             ===================================================================== -->
+        <section class="podcast-channel" id="podcast-channel" aria-label="La chaîne YouTube">
+          <div class="container">
+
+            <div class="podcast-channel-header">
+              <div class="podcast-eyebrow">
+                <span class="podcast-eyebrow-dash">—</span> LA CHAÎNE
+              </div>
+              <h2 class="podcast-section-title">
+                À regarder, pas seulement à écouter.
+              </h2>
+            </div>
+
+            <!-- 5 Video Cards Grid (3 on top row, 2 centered below) -->
+            <div class="podcast-videos-grid">
+
+              <!-- Card 1 -->
+              <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="podcast-video-card" aria-label="Regarder l'épisode sur YouTube">
+                <img src="assets/images/podcast/YT-banner.png" alt="Épisode Confessions de Leaders 1" class="podcast-video-thumb" width="427" height="258" loading="lazy">
+                <div class="podcast-video-overlay">
+                  <div class="podcast-play-btn" aria-hidden="true">
+                    <svg class="podcast-play-icon" viewBox="0 0 14 16">
+                      <polygon points="0,0 14,8 0,16"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <img src="assets/images/elements/youtube_logo.png" alt="YouTube" class="podcast-youtube-logo" width="192" height="44" loading="lazy">
+              </a>
+
+              <!-- Card 2 -->
+              <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="podcast-video-card" aria-label="Regarder l'épisode sur YouTube">
+                <img src="assets/images/podcast/YT-banner.png" alt="Épisode Confessions de Leaders 2" class="podcast-video-thumb" width="427" height="258" loading="lazy">
+                <div class="podcast-video-overlay">
+                  <div class="podcast-play-btn" aria-hidden="true">
+                    <svg class="podcast-play-icon" viewBox="0 0 14 16">
+                      <polygon points="0,0 14,8 0,16"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <img src="assets/images/elements/youtube_logo.png" alt="YouTube" class="podcast-youtube-logo" width="192" height="44" loading="lazy">
+              </a>
+
+              <!-- Card 3 -->
+              <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="podcast-video-card" aria-label="Regarder l'épisode sur YouTube">
+                <img src="assets/images/podcast/YT-banner.png" alt="Épisode Confessions de Leaders 3" class="podcast-video-thumb" width="427" height="258" loading="lazy">
+                <div class="podcast-video-overlay">
+                  <div class="podcast-play-btn" aria-hidden="true">
+                    <svg class="podcast-play-icon" viewBox="0 0 14 16">
+                      <polygon points="0,0 14,8 0,16"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <img src="assets/images/elements/youtube_logo.png" alt="YouTube" class="podcast-youtube-logo" width="192" height="44" loading="lazy">
+              </a>
+
+              <!-- Card 4 -->
+              <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="podcast-video-card" aria-label="Regarder l'épisode sur YouTube">
+                <img src="assets/images/podcast/YT-banner.png" alt="Épisode Confessions de Leaders 4" class="podcast-video-thumb" width="427" height="258" loading="lazy">
+                <div class="podcast-video-overlay">
+                  <div class="podcast-play-btn" aria-hidden="true">
+                    <svg class="podcast-play-icon" viewBox="0 0 14 16">
+                      <polygon points="0,0 14,8 0,16"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <img src="assets/images/elements/youtube_logo.png" alt="YouTube" class="podcast-youtube-logo" width="192" height="44" loading="lazy">
+              </a>
+
+              <!-- Card 5 -->
+              <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="podcast-video-card" aria-label="Regarder l'épisode sur YouTube">
+                <img src="assets/images/podcast/YT-banner.png" alt="Épisode Confessions de Leaders 5" class="podcast-video-thumb" width="427" height="258" loading="lazy">
+                <div class="podcast-video-overlay">
+                  <div class="podcast-play-btn" aria-hidden="true">
+                    <svg class="podcast-play-icon" viewBox="0 0 14 16">
+                      <polygon points="0,0 14,8 0,16"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <img src="assets/images/elements/youtube_logo.png" alt="YouTube" class="podcast-youtube-logo" width="192" height="44" loading="lazy">
+              </a>
+
+            </div>
+
+            <!-- Bottom Channel CTA -->
+            <div class="podcast-channel-action">
+              <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="btn podcast-channel-btn">
+                Voir la chaîne
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 8: CE QUE VOUS EN REPARTEZ (#podcast-takeaways)
+             ===================================================================== -->
+        <section class="podcast-takeaways" id="podcast-takeaways" aria-label="Ce que vous en repartez">
+          <div class="container">
+
+            <div class="podcast-takeaways-header">
+              <div class="podcast-eyebrow">
+                <span class="podcast-eyebrow-dash">—</span> CE QUE VOUS EN REPARTEZ
+              </div>
+              <h2 class="podcast-section-title">
+                Une heure, et vous regardez votre propre situation autrement.
+              </h2>
+            </div>
+
+            <!-- 3 Takeaway Cards Grid -->
+            <div class="podcast-takeaways-grid">
+
+              <!-- Card 1 -->
+              <div class="podcast-takeaway-card">
+                <div class="podcast-takeaway-icon-wrap">
+                  <img src="assets/images/podcast/growth-icon.svg" alt="" class="podcast-takeaway-icon" width="44" height="44" aria-hidden="true">
+                </div>
+                <h3 class="podcast-takeaway-title">
+                  Une décision que vous avez à prendre
+                </h3>
+                <p class="podcast-takeaway-desc">
+                  C'est le plus grand transfert de propriété que le Québec inc. aura connu. Derrière chaque transaction, quelqu'un prend la suite et doit apprendre vite.
+                </p>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="podcast-takeaway-card">
+                <div class="podcast-takeaway-icon-wrap">
+                  <img src="assets/images/podcast/growth-icon.svg" alt="" class="podcast-takeaway-icon" width="44" height="44" aria-hidden="true">
+                </div>
+                <h3 class="podcast-takeaway-title">
+                  Ce que ça a réellement pris
+                </h3>
+                <p class="podcast-takeaway-desc">
+                  Le temps, les erreurs, ce qu'il a fallu abandonner en chemin. Décision par décision, dans l'ordre où c'est arrivé.
+                </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="podcast-takeaway-card">
+                <div class="podcast-takeaway-icon-wrap">
+                  <img src="assets/images/podcast/growth-icon.svg" alt="" class="podcast-takeaway-icon" width="44" height="44" aria-hidden="true">
+                </div>
+                <h3 class="podcast-takeaway-title">
+                  De quoi lancer la conversation
+                </h3>
+                <p class="podcast-takeaway-desc">
+                  Ce qui se dit dans l'épisode se redit en comité de direction le lendemain. Plusieurs invités repartent avec la question qu'on leur a posée.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- =====================================================================
+             SECTION 9: PRE-FOOTER CTA (#podcast-cta)
+             ===================================================================== -->
+        <section class="podcast-cta" id="podcast-cta" aria-label="Écouter le podcast">
+          <div class="container">
+            <div class="podcast-cta-inner">
+              <h2 class="podcast-cta-title">
+                Les 5 saisons sont en ligne.
+              </h2>
+              <p class="podcast-cta-desc">
+                Écoutez où vous voulez. La 6e commence en septembre.
+              </p>
+
+              <!-- Platform Pill Buttons Row -->
+              <div class="podcast-cta-platforms">
+                <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="podcast-cta-pill podcast-cta-yt" aria-label="Écouter sur YouTube">
+                  <img src="assets/images/podcast/social-icons/YT.png" alt="" class="platform-icon icon-yt" width="20" height="14">
+                  <span>YouTube</span>
+                </a>
+                <a href="https://open.spotify.com" target="_blank" rel="noopener" class="podcast-cta-pill podcast-cta-spotify" aria-label="Écouter sur Spotify">
+                  <img src="assets/images/podcast/social-icons/spotify.png" alt="" class="platform-icon icon-spotify" width="18" height="18">
+                  <span>Spotify</span>
+                </a>
+                <a href="https://podcasts.apple.com" target="_blank" rel="noopener" class="podcast-cta-pill podcast-cta-apple" aria-label="Écouter sur Apple Podcasts">
+                  <img src="assets/images/podcast/social-icons/apple-podcasts.png" alt="" class="platform-icon icon-apple" width="18" height="18">
+                  <span>Apple Podcasts</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- =======================================================================
+           SITE FOOTER (Globally Unified Across All Pages)
+           ======================================================================= -->
+      <footer class="site-footer" id="site-footer">
+        <div class="container">
+          <div class="footer-main-grid">
+
+            <!-- Column 1: Brand & Bio -->
+            <div class="footer-brand-col">
+              <a href="index.html" class="footer-logo" aria-label="Cloé Caron Accueil">
+                <img src="assets/images/logo/Cloe-logo.svg" alt="Cloé Caron" width="72" height="72"
+                  class="footer-logo-img">
+              </a>
+              <p class="footer-brand-desc">
+                Cloé Caron accompagne les<br>
+                dirigeants à bâtir une entreprise qui<br>
+                grandit sans eux.
+              </p>
+            </div>
+
+            <!-- Column 2: Navigation -->
+            <div class="footer-nav-col">
+              <h3 class="footer-col-title">NAVIGATION</h3>
+              <ul class="footer-links-list">
+                <li>
+                  <a href="index.html" class="footer-link">
+                    <span class="footer-bullet">•</span> Accueil
+                  </a>
+                </li>
+                <li>
+                  <a href="partnership.html" class="footer-link">
+                    <span class="footer-bullet">•</span> Le partenariat
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html#cloe-caron" class="footer-link">
+                    <span class="footer-bullet">•</span> Cloé Caron
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 3: Contenu -->
+            <div class="footer-content-col">
+              <h3 class="footer-col-title">CONTENU</h3>
+              <ul class="footer-links-list">
+                <li>
+                  <a href="podcasts.html" class="footer-link active">
+                    <span class="footer-bullet">•</span> Podcast — Confessions de Leaders
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@CloeCaron" target="_blank" rel="noopener" class="footer-link">
+                    <span class="footer-bullet">•</span> Chaîne YouTube
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html#livre" class="footer-link">
+                    <span class="footer-bullet">•</span> Lancement du prochain livre
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Sub-Footer Bottom Bar -->
+          <div class="footer-bottom-row">
+            <p class="footer-copyright">
+              © 2026 O2 Coaching — Cloé Caron
+            </p>
+            <span class="footer-direction">
+              Maquette — direction 2a
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCRIPTS (GSAP Local Suite: Core + ScrollTrigger + ScrollSmoother + ScrollToPlugin)
+       ========================================================================= -->
+  <script src="assets/gsap-public/minified/gsap.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollTrigger.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollSmoother.min.js"></script>
+  <script src="assets/gsap-public/minified/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js?v=2.3" defer></script>
+
+</body>
+
+</html>

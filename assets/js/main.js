@@ -1097,6 +1097,278 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+
+      // ----------------------------------------------------------------------
+      // 21. Podcasts Page: Hero Section Entrance Animation
+      // ----------------------------------------------------------------------
+      const podcastHero = document.getElementById('podcast-hero');
+      if (podcastHero) {
+        const podHeroTl = gsap.timeline({
+          defaults: { ease: 'power3.out', duration: 0.9 }
+        });
+
+        podHeroTl
+          .from('#podcast-hero .podcast-eyebrow', { y: 20, opacity: 0, duration: 0.7, delay: 0.15 })
+          .from('#podcast-hero .podcast-hero-title', { y: 35, opacity: 0, duration: 0.9 }, '-=0.5')
+          .from('#podcast-hero .podcast-hero-desc', { y: 25, opacity: 0, duration: 0.8 }, '-=0.6')
+          .from('#podcast-hero .podcast-platforms-row', { y: 20, opacity: 0, duration: 0.7 }, '-=0.5')
+          .from('#podcast-hero .podcast-hero-btn', { y: 20, opacity: 0, duration: 0.65 }, '-=0.4')
+          .from('#podcast-hero .podcast-hero-media-col', { y: 30, opacity: 0, duration: 0.95 }, '-=0.6');
+      }
+
+      // ----------------------------------------------------------------------
+      // 22. Podcasts Page: Scroll-Driven Section Reveals
+      // ----------------------------------------------------------------------
+      if (document.getElementById('podcast-why')) {
+        gsap.from(['#podcast-why .podcast-why-media', '#podcast-why .podcast-why-content'], {
+          y: 35,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.18,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-why',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+
+      if (document.getElementById('podcast-hosts')) {
+        gsap.from(['#podcast-hosts .podcast-hosts-content', '#podcast-hosts .podcast-hosts-media'], {
+          y: 35,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.18,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-hosts',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+
+      if (document.getElementById('podcast-archive')) {
+        gsap.from('#podcast-archive .podcast-archive-header', {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-archive',
+            start: 'top 85%',
+            once: true
+          }
+        });
+
+        // Digital Clock / Odometer Rolling Counter Setup
+        const statCards = gsap.utils.toArray('#podcast-archive .podcast-stat-card');
+        const statNumbers = document.querySelectorAll('#podcast-archive .podcast-stat-number');
+        const digitTracks = [];
+
+        statNumbers.forEach((el, cardIdx) => {
+          const originalText = el.textContent.trim();
+          el.setAttribute('aria-label', originalText);
+          el.innerHTML = '';
+
+          const chars = originalText.split('');
+          chars.forEach((char, charIdx) => {
+            if (/\d/.test(char)) {
+              const digit = parseInt(char, 10);
+              const reel = document.createElement('span');
+              reel.className = 'stat-digit-reel';
+
+              const track = document.createElement('span');
+              track.className = 'stat-digit-track';
+
+              // Build rolling drum numbers: 2 revolutions of 0-9 before the target digit
+              const list = [];
+              const revolutions = 2;
+              for (let r = 0; r < revolutions; r++) {
+                for (let d = 0; d <= 9; d++) {
+                  list.push(d);
+                }
+              }
+              list.push(digit);
+
+              list.forEach(d => {
+                const item = document.createElement('span');
+                item.className = 'stat-digit-item';
+                item.textContent = d;
+                track.appendChild(item);
+              });
+
+              reel.appendChild(track);
+              el.appendChild(reel);
+
+              const targetIndex = list.length - 1;
+              const totalItems = list.length;
+              const targetY = -(targetIndex / totalItems * 100);
+
+              digitTracks.push({
+                track: track,
+                targetY: targetY,
+                cardIdx: cardIdx,
+                charIdx: charIdx
+              });
+            } else {
+              const span = document.createElement('span');
+              span.className = 'stat-digit-static';
+              span.innerHTML = char === ' ' ? '&nbsp;' : char;
+              el.appendChild(span);
+            }
+          });
+        });
+
+        ScrollTrigger.create({
+          trigger: '#podcast-archive .podcast-stats-grid',
+          start: 'top 85%',
+          once: true,
+          onEnter: () => {
+            // Smooth reveal of stat cards
+            gsap.from(statCards, {
+              y: 35,
+              opacity: 0,
+              duration: 0.8,
+              stagger: 0.1,
+              ease: 'power3.out',
+              clearProps: 'transform,opacity'
+            });
+
+            // Digital clock rolling digits with realistic momentum & stagger
+            digitTracks.forEach((item) => {
+              gsap.fromTo(item.track, 
+                { yPercent: 0 },
+                {
+                  yPercent: item.targetY,
+                  duration: 2.2,
+                  delay: item.cardIdx * 0.1 + item.charIdx * 0.05,
+                  ease: 'power3.out'
+                }
+              );
+            });
+          }
+        });
+      }
+
+      if (document.getElementById('podcast-episode')) {
+        gsap.from('#podcast-episode .podcast-episode-content', {
+          y: 35,
+          opacity: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-episode',
+            start: 'top 80%',
+            once: true
+          }
+        });
+
+        gsap.from('#podcast-episode .podcast-chapter-item', {
+          x: -20,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-episode .podcast-chapters-list',
+            start: 'top 85%',
+            once: true
+          }
+        });
+
+        gsap.from('#podcast-episode .podcast-episode-media', {
+          y: 40,
+          opacity: 0,
+          duration: 0.9,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-episode',
+            start: 'top 80%',
+            once: true
+          }
+        });
+      }
+
+      if (document.getElementById('podcast-channel')) {
+        gsap.from('#podcast-channel .podcast-channel-header', {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-channel',
+            start: 'top 85%',
+            once: true
+          }
+        });
+
+        gsap.from('#podcast-channel .podcast-video-card', {
+          y: 35,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-channel .podcast-videos-grid',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+
+      if (document.getElementById('podcast-takeaways')) {
+        gsap.from('#podcast-takeaways .podcast-takeaways-header', {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-takeaways',
+            start: 'top 85%',
+            once: true
+          }
+        });
+
+        gsap.from('#podcast-takeaways .podcast-takeaway-card', {
+          y: 35,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.14,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-takeaways .podcast-takeaways-grid',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+
+      if (document.getElementById('podcast-cta')) {
+        gsap.from('#podcast-cta .podcast-cta-inner', {
+          y: 30,
+          opacity: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          clearProps: 'all',
+          scrollTrigger: {
+            trigger: '#podcast-cta',
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
     });
 
     window.addEventListener('beforeunload', () => {
