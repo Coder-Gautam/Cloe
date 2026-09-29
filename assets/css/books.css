@@ -17,11 +17,12 @@
 .books-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  color: var(--color-accent-gold);
+  gap: 12px;
+  color: var(--color-primary-navy);
   font-family: var(--font-primary);
-  font-size: var(--text-sm);
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   margin-bottom: clamp(14px, 1.8vw, 22px);
@@ -29,8 +30,14 @@
 
 .books-eyebrow-dash {
   display: inline-block;
-  font-weight: var(--fw-semibold);
-  color: var(--color-accent-gold);
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .books-section-title {
@@ -94,12 +101,6 @@
 }
 
 .books-hero .books-eyebrow {
-  color: var(--color-accent-gold);
-  font-family: var(--font-primary);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-eyebrow);
-  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
@@ -331,7 +332,7 @@
 }
 
 .books-laws .books-eyebrow {
-  color: var(--color-accent-gold);
+  color: var(--color-bg-offwhite);
   margin-bottom: 20px;
 }
 
@@ -633,11 +634,12 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--color-accent-gold);
+  color: var(--color-primary-navy);
   font-family: var(--font-primary);
-  font-size: 13.5px;
-  font-weight: 300;
-  letter-spacing: 0.14em;
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
 }
 
@@ -645,8 +647,9 @@
   content: '';
   display: inline-block;
   width: 20px;
-  height: 1px;
+  height: 2px;
   background-color: var(--color-accent-gold);
+  flex-shrink: 0;
 }
 
 .books-testimonials-carousel {

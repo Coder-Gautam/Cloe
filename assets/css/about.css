@@ -1,0 +1,592 @@
+/**
+ * ==============================================================================
+ * CLOÉ CARON - ABOUT PAGE STYLESHEET (about.css)
+ * Pixel-perfect translation of Figma design "Cloé Caron - About"
+ * 60fps hardware-accelerated animations, fluid typography & zero-jank layout
+ * ==============================================================================
+ */
+
+/* ------------------------------------------------------------------------------
+   1. SHARED UTILITIES & SECTION SPACING FOR ABOUT PAGE
+   ------------------------------------------------------------------------------ */
+.about-page {
+  background-color: var(--color-bg-offwhite);
+  color: var(--color-primary-navy);
+}
+
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+}
+
+.about-eyebrow.justify-center {
+  justify-content: center;
+}
+
+.about-eyebrow-dash {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Dark section eyebrow text color */
+.about-cta-section .about-eyebrow {
+  color: var(--color-bg-offwhite);
+}
+
+.about-section-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 1.8rem + 1.4vw, 2.85rem);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: clamp(16px, 2vw, 26px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------------------
+   2. BUTTON UTILITIES (STRICT ZERO BORDER-RADIUS)
+   ------------------------------------------------------------------------------ */
+.about-btn-primary {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-navy);
+  border: 1px solid var(--color-accent-gold);
+  border-radius: 0;
+  padding: 16px 32px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-normal);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.about-btn-primary:hover {
+  background-color: var(--color-accent-gold-hover);
+  border-color: var(--color-accent-gold-hover);
+  transform: translateY(-2px);
+  color: var(--color-primary-navy);
+}
+
+.about-btn-secondary {
+  background-color: transparent;
+  color: var(--color-accent-gold);
+  border: 1px solid var(--color-accent-gold);
+  border-radius: 0;
+  padding: 16px 32px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-normal);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.about-btn-secondary:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-navy);
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------------------------
+   3. SECTION 1: ABOUT HERO (#about-hero)
+   Full-width split layout matching Figma Cloé Caron - About.png
+   ------------------------------------------------------------------------------ */
+.about-hero {
+  position: relative;
+  background-color: var(--color-bg-offwhite);
+  padding-top: var(--header-height);
+  padding-bottom: 0;
+  width: 100%;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 720px;
+  align-items: stretch;
+}
+
+/* Left Column: 50% width, inner content aligns with site container */
+.about-hero-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-top: clamp(24px, 3vw, 44px);
+  padding-bottom: clamp(32px, 3.5vw, 52px);
+  padding-right: clamp(24px, 3vw, 52px);
+}
+
+.about-hero-content {
+  width: 100%;
+  max-width: calc((var(--container-max-width) / 2) - var(--container-padding));
+  margin-left: auto;
+  padding-left: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-hero .about-eyebrow {
+  margin-bottom: 18px;
+}
+
+.about-hero-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: var(--fw-bold);
+  line-height: 1.12;
+  letter-spacing: var(--ls-tight);
+  margin-bottom: 20px;
+}
+
+.about-hero-desc {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.55;
+  font-weight: var(--fw-regular);
+  margin-bottom: 16px;
+  max-width: 540px;
+}
+
+.about-hero-desc:last-of-type {
+  margin-bottom: 28px;
+}
+
+.about-hero-btn-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Right Column: Full Bleed Image */
+.about-hero-media-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  background-color: #E8E5DF;
+}
+
+.about-hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.about-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ------------------------------------------------------------------------------
+   4. SECTION 2: STATS STRIP (#about-stats)
+   5 key figures across Québec inc. leadership
+   ------------------------------------------------------------------------------ */
+.about-stats-section {
+  width: 100%;
+  background-color: #FAFAF8;
+  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  padding: clamp(40px, 4.5vw, 50px) 0;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(20px, 2.5vw, 40px);
+  align-items: flex-start;
+}
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-stat-value {
+  font-family: var(--font-primary);
+  font-size: clamp(38px, 4.2vw, 56px);
+  font-weight: var(--fw-bold);
+  color: #000000;
+  line-height: 1.05;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.about-stat-label {
+  font-family: var(--font-primary);
+  font-size: clamp(13px, 0.9vw, 15px);
+  font-weight: var(--fw-regular);
+  color: var(--color-primary-navy);
+  line-height: 1.45;
+}
+
+/* ------------------------------------------------------------------------------
+   5. SECTION 3: LES MODÈLES (#about-models)
+   Diagram (models.svg) + 3 Cards + Quote Callout
+   ------------------------------------------------------------------------------ */
+.about-models-section {
+  padding-top: clamp(80px, 8vw, 100px);
+  padding-bottom: 0;
+  background-color: var(--color-bg-offwhite);
+}
+
+.about-models-header {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto clamp(48px, 5vw, 72px);
+}
+
+.about-models-diagram-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: clamp(60px, 7vw, 96px);
+}
+
+.about-models-svg {
+  width: 100%;
+  max-width: 896px;
+  height: auto;
+  display: block;
+}
+
+.about-models-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 2.5vw, 36px);
+  margin-bottom: clamp(60px, 7vw, 90px);
+}
+
+.about-model-card {
+  background-color: #FFFFFF;
+  border: 1px solid #EAE8E4;
+  padding: clamp(36px, 3.5vw, 48px) clamp(28px, 2.8vw, 40px);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(20, 33, 61, 0.06);
+}
+
+.about-card-eyebrow {
+  color: var(--color-accent-gold);
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.about-card-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: clamp(26px, 2.2vw, 32px);
+  font-weight: var(--fw-bold);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.about-card-subtitle {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.about-card-desc {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: var(--fw-regular);
+  margin-bottom: 32px;
+  min-height: 72px;
+}
+
+.about-card-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #F0EFEB;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--color-primary-navy);
+  line-height: 1.4;
+}
+
+.about-card-item:last-child {
+  border-bottom: none;
+}
+
+.model-item-arrow {
+  flex-shrink: 0;
+  width: 20px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.about-model-card:hover .model-item-arrow {
+  transform: translateX(3px);
+}
+
+/* Callout Box Flanked by Two Vertical Gold Bars */
+.about-models-callout {
+  max-width: 770px;
+  margin: 0 auto;
+  border-left: 2px solid var(--color-accent-gold);
+  border-right: 2px solid var(--color-accent-gold);
+  padding: 8px clamp(24px, 3.5vw, 48px);
+  text-align: center;
+}
+
+.about-models-callout-text {
+  color: var(--color-accent-gold);
+  font-family: var(--font-primary);
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.65;
+  font-weight: var(--fw-regular);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------------------
+   6. SECTION 4: CONVICTIONS (#about-convictions)
+   3 Philosophy Cards
+   ------------------------------------------------------------------------------ */
+.about-convictions-section {
+  padding-top: clamp(60px, 6vw, 90px);
+  padding-bottom: clamp(90px, 9vw, 140px);
+  background-color: var(--color-bg-offwhite);
+}
+
+.about-convictions-header {
+  margin-bottom: 0;
+}
+
+.about-convictions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+.about-conviction-card {
+  background-color: #FFFFFF;
+  border: 1px solid #EAE8E4;
+  padding: clamp(28px, 3vw, 34px) clamp(20px, 2.5vw, 30px);
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2vw, 26px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-conviction-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(20, 33, 61, 0.06);
+}
+
+.about-conviction-icon-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-conviction-icon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.about-conviction-text {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: clamp(16px, 1.3vw, 18px);
+  font-weight: var(--fw-bold);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------------------
+   7. SECTION 5: FINAL CTA (#about-cta)
+   Commencer — Repartez avec l'évaluation de votre capacité de croissance
+   ------------------------------------------------------------------------------ */
+.about-cta-section {
+  background-color: var(--color-primary-navy);
+  color: var(--color-white);
+  padding: clamp(80px, 9vw, 100px) 0;
+  text-align: center;
+}
+
+.about-cta-content {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-cta-title {
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: clamp(32px, 3.8vw, 50px);
+  font-weight: var(--fw-bold);
+  line-height: 1.15;
+  letter-spacing: var(--ls-tight);
+  margin-top: 18px;
+  margin-bottom: 22px;
+}
+
+.about-cta-desc {
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: clamp(16px, 1.15vw, 19px);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  max-width: 680px;
+  margin-bottom: 38px;
+  opacity: 0.95;
+}
+
+.about-cta-btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+/* ------------------------------------------------------------------------------
+   8. RESPONSIVE MEDIA QUERIES
+   ------------------------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .about-hero-content-col {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-hero-content {
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .about-hero-media-col {
+    min-height: 480px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+  }
+
+  .about-models-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-card-desc {
+    min-height: auto;
+  }
+
+  .about-convictions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .about-hero-btn-group,
+  .about-cta-btn-group {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .about-btn-primary,
+  .about-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-models-callout {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

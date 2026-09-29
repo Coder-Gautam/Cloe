@@ -46,19 +46,29 @@
 }
 
 .partnership-eyebrow {
-  color: var(--color-accent-gold);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
+  color: var(--color-bg-offwhite);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   margin-bottom: var(--space-4);
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 12px;
 }
 
 .partnership-eyebrow .eyebrow-dash {
   display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .partnership-title {
@@ -230,20 +240,30 @@
 }
 
 .opportunity-eyebrow {
-  color: var(--color-accent-gold);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   margin-bottom: var(--space-4);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
+  gap: 12px;
 }
 
 .opportunity-eyebrow .eyebrow-dash {
   display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .opportunity-title {
@@ -468,15 +488,29 @@
 }
 
 .models-eyebrow {
-  color: var(--color-accent-gold);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   margin-bottom: var(--space-4);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 12px;
+}
+
+.models-eyebrow .eyebrow-dash {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .models-title {
@@ -962,22 +996,36 @@
 .installe-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 12px;
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
   margin-bottom: clamp(20px, 3.5vw, 26px);
 }
 
 .installe-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
-  font-size: var(--text-base);
-  font-weight: var(--fw-bold);
-  line-height: 1;
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .installe-eyebrow .eyebrow-label {
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
-  color: var(--color-slate-gray);
+  color: var(--color-primary-navy);
   text-transform: uppercase;
 }
 
@@ -1075,22 +1123,36 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-3);
+  gap: 12px;
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
   margin-bottom: clamp(16px, 1.8vw, 24px);
 }
 
 .diff-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
-  font-size: var(--text-base);
-  font-weight: var(--fw-bold);
-  line-height: 1;
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .diff-eyebrow .eyebrow-label {
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
-  color: var(--color-slate-gray);
+  color: var(--color-primary-navy);
   text-transform: uppercase;
 }
 
@@ -1300,22 +1362,36 @@
 .fonds-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 12px;
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
   margin-bottom: clamp(16px, 1.8vw, 24px);
 }
 
 .fonds-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
-  font-size: var(--text-base);
-  font-weight: var(--fw-bold);
-  line-height: 1;
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .fonds-eyebrow .eyebrow-label {
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
-  color: var(--color-slate-gray);
+  color: var(--color-primary-navy);
   text-transform: uppercase;
 }
 
@@ -1474,18 +1550,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.16em;
+  gap: 12px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: var(--color-accent-gold);
+  color: var(--color-bg-offwhite);
   margin-bottom: clamp(18px, 2.2vw, 26px);
 }
 
 .home-cta-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
-  font-weight: var(--fw-bold);
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .home-cta-title {

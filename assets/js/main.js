@@ -74,17 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
       // ----------------------------------------------------------------------
       // 4. Hero Section Entrance Animation
       // ----------------------------------------------------------------------
-      const heroTl = gsap.timeline({
-        defaults: { ease: 'power3.out', duration: 0.95 }
-      });
+      if (document.querySelector('.hero-eyebrow')) {
+        const heroTl = gsap.timeline({
+          defaults: { ease: 'power3.out', duration: 0.95 }
+        });
 
-      heroTl
-        .from('.hero-eyebrow', { y: 20, opacity: 0, duration: 0.7, delay: 0.15 })
-        .from('.hero-title', { y: 40, opacity: 0, duration: 0.95 }, '-=0.5')
-        .from('.hero-lead', { y: 25, opacity: 0, duration: 0.8 }, '-=0.6')
-        .from('.hero-cta-group .btn', { y: 20, opacity: 0, stagger: 0.15, duration: 0.75 }, '-=0.5')
-        .from('.hero-trust', { y: 15, opacity: 0, duration: 0.65 }, '-=0.4')
-        .from('.hero-callout', { x: -25, opacity: 0, duration: 0.85 }, '-=0.45');
+        heroTl
+          .from('.hero-eyebrow', { y: 20, opacity: 0, duration: 0.7, delay: 0.15 })
+          .from('.hero-title', { y: 40, opacity: 0, duration: 0.95 }, '-=0.5')
+          .from('.hero-lead', { y: 25, opacity: 0, duration: 0.8 }, '-=0.6')
+          .from('.hero-cta-group .btn', { y: 20, opacity: 0, stagger: 0.15, duration: 0.75 }, '-=0.5')
+          .from('.hero-trust', { y: 15, opacity: 0, duration: 0.65 }, '-=0.4')
+          .from('.hero-callout', { x: -25, opacity: 0, duration: 0.85 }, '-=0.45');
+      }
 
       // ----------------------------------------------------------------------
       // 5. Scroll-Driven Element Reveals across Homepage
@@ -1692,6 +1694,135 @@ document.addEventListener('DOMContentLoaded', () => {
             once: true
           }
         });
+      }
+
+      // ----------------------------------------------------------------------
+      // 26. About Page Animations
+      // Hardware-accelerated entrance & scroll-triggered reveals
+      // ----------------------------------------------------------------------
+      const aboutHero = document.getElementById('about-hero');
+      if (aboutHero) {
+        const aboutHeroTl = gsap.timeline({
+          defaults: { ease: 'power3.out', duration: 0.9 }
+        });
+
+        aboutHeroTl
+          .from('#about-hero .about-eyebrow', { y: 15, opacity: 0, duration: 0.6, delay: 0.1 })
+          .from('#about-hero .about-hero-title', { y: 25, opacity: 0, duration: 0.7 }, '-=0.4')
+          .from('#about-hero .about-hero-desc', { y: 15, opacity: 0, stagger: 0.1, duration: 0.6 }, '-=0.4')
+          .from('#about-hero .about-hero-btn-group', { y: 15, opacity: 0, duration: 0.6 }, '-=0.4')
+          .from('#about-hero .about-hero-media-col', { opacity: 0, duration: 0.8 }, '-=0.6');
+
+        // Stats Strip Reveal
+        if (document.getElementById('about-stats')) {
+          gsap.from('#about-stats .about-stat-item', {
+            y: 25,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about-stats',
+              start: 'top 85%',
+              once: true
+            }
+          });
+        }
+
+        // Models Section Reveal
+        if (document.getElementById('about-models')) {
+          gsap.from('#about-models .about-models-header', {
+            y: 30,
+            opacity: 0,
+            duration: 0.85,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about-models',
+              start: 'top 80%',
+              once: true
+            }
+          });
+
+          gsap.from('#about-models .about-models-svg', {
+            scale: 0.96,
+            opacity: 0,
+            duration: 1.0,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#about-models .about-models-diagram-wrap',
+              start: 'top 80%',
+              once: true
+            }
+          });
+
+          gsap.from('#about-models .about-model-card', {
+            y: 35,
+            opacity: 0,
+            duration: 0.85,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about-models .about-models-cards-grid',
+              start: 'top 80%',
+              once: true
+            }
+          });
+
+          gsap.from('#about-models .about-models-callout', {
+            y: 25,
+            opacity: 0,
+            duration: 0.85,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about-models .about-models-callout',
+              start: 'top 85%',
+              once: true
+            }
+          });
+        }
+
+        // Convictions Section Reveal
+        if (document.getElementById('about-convictions')) {
+          gsap.from('#about-convictions .about-convictions-header', {
+            y: 20,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about-convictions',
+              start: 'top 85%',
+              once: true
+            }
+          });
+
+          gsap.from('#about-convictions .about-conviction-card', {
+            y: 30,
+            opacity: 0,
+            duration: 0.85,
+            stagger: 0.12,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about-convictions .about-convictions-grid',
+              start: 'top 82%',
+              once: true
+            }
+          });
+        }
+
+        // CTA Section Reveal
+        if (document.getElementById('about-cta')) {
+          gsap.from('#about-cta .about-cta-content', {
+            y: 30,
+            opacity: 0,
+            duration: 0.85,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about-cta',
+              start: 'top 85%',
+              once: true
+            }
+          });
+        }
       }
     });
 

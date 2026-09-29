@@ -60,6 +60,7 @@
   /* 40px - 62px Hero Title */
 
   /* Font Weights */
+  --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
@@ -75,7 +76,7 @@
   --ls-tight: -0.02em;
   --ls-normal: 0em;
   --ls-wide: 0.04em;
-  --ls-eyebrow: 0.12em;
+  --ls-eyebrow: 0.2em;
 
   /* --- Spacing & Sizing Tokens --- */
   --space-1: 4px;

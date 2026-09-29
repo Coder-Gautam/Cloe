@@ -66,10 +66,14 @@
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
+  gap: 12px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
   letter-spacing: var(--ls-eyebrow);
-  color: var(--color-accent-gold);
+  text-transform: uppercase;
+  color: var(--color-bg-offwhite);
   margin-bottom: var(--space-4);
 }
 
@@ -405,6 +409,13 @@
 }
 
 .partnership-eyebrow {
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
   margin-bottom: var(--space-4);
 }
 
@@ -634,6 +645,14 @@
 .problem-eyebrow {
   display: inline-flex;
   align-items: center;
+  gap: 12px;
+  color: var(--color-primary-navy);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
   margin-bottom: var(--space-4);
 }
 
@@ -788,11 +807,17 @@
 }
 
 .model-5p-eyebrow {
-  margin-bottom: var(--space-4);
-  font-size: 12.5px;
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.16em;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-bg-offwhite);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
+  margin-bottom: var(--space-4);
 }
 
 .model-5p-title {
@@ -1274,17 +1299,27 @@
 .founder-section-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12.5px;
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.16em;
+  gap: 12px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: var(--color-slate-gray);
+  color: var(--color-primary-navy);
   margin-bottom: clamp(16px, 2vw, 24px);
 }
 
 .founder-section-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .founder-section-name {
@@ -1442,18 +1477,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.16em;
+  gap: 12px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--color-primary-navy);
   margin-bottom: clamp(14px, 1.8vw, 20px);
 }
 
 .team-testimonials-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
-  font-weight: var(--fw-bold);
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .team-testimonials-title {
@@ -1651,18 +1695,27 @@
 .difference-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.16em;
+  gap: 12px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: var(--color-slate-gray);
+  color: var(--color-primary-navy);
   margin-bottom: clamp(22px, 2.6vw, 32px);
 }
 
 .difference-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
-  font-weight: var(--fw-bold);
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .difference-title {
@@ -1758,18 +1811,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.16em;
+  gap: 12px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: var(--fw-light);
+  line-height: 27px;
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: var(--color-accent-gold);
+  color: var(--color-bg-offwhite);
   margin-bottom: clamp(18px, 2.2vw, 26px);
 }
 
 .home-cta-eyebrow .eyebrow-dash {
-  color: var(--color-accent-gold);
-  font-weight: var(--fw-bold);
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent-gold);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .home-cta-title {
