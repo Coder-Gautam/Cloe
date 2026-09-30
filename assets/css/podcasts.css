@@ -114,7 +114,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: clamp(14px, 2vw, 28px);
+  gap: clamp(20px, 2vw, 34px);
   margin-bottom: clamp(28px, 3.5vw, 40px);
 }
 
@@ -123,7 +123,7 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: var(--fw-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -137,15 +137,15 @@
 }
 
 .platform-icon {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .platform-icon.icon-yt {
-  width: 26px;
-  height: 19px;
+  width: 36px;
+  height: 29px;
 }
 
 /* Hero Button */
